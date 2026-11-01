@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Mac OS
+.DS_Store
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyTorch checkpoints and model weights
+checkpoints/
+models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+wandb/
+
+# Intermediate and output data (except small sample/demo files)
+results/
+logs/
+cache/
+.cache/
