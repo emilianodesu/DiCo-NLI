@@ -22,9 +22,9 @@ Este proyecto aborda el fenómeno del *Reversal Curse* y la inconsistencia lógi
 ```
 ├── data/                  # Datos crudos y procesados del benchmark
 ├── src/                   # Código fuente modular (data, models, training, evaluation)
-├── experiments/           # Scripts reproducibles de entrenamiento y evaluación
-├── notebooks/             # Notebooks para Google Colab con soporte GPU
-├── tests/                 # Pruebas unitarias y de integración
+├── experiments/           # Scripts reproducibles de entrenamiento y evaluación CLI
+├── scripts/               # Scripts bash de ejecución rápida para servidor GPU
+├── tests/                 # Pruebas unitarias y de integración rápida local
 ├── report/                # Reporte final en formato ACL (LaTeX / PDF)
 └── presentation/          # Diapositivas de la presentación en PDF
 ```
@@ -38,9 +38,21 @@ source .venv/bin/activate
 # 2. Instalar dependencias
 pip install -r requirements.txt
 
-# 3. Ejecutar pruebas unitarias
+# 3. Ejecutar pruebas unitarias locales
 pytest tests/
 ```
 
-## Entrenamientos en GPU (Google Colab / Kaggle)
-Consulta el notebook autónomo ubicado en `notebooks/DiCo_NLI_Colab_Training.ipynb` para ejecutar los experimentos en entornos con GPU NVIDIA.
+## Entrenamiento en Servidor con GPU NVIDIA (CUDA)
+Para ejecutar el entrenamiento completo en un servidor con GPU:
+```bash
+# Clonar y entrar al repositorio
+git clone <URL_DEL_REPO>
+cd FinalProject
+
+# Crear entorno e instalar dependencias con soporte CUDA
+pip install -r requirements.txt
+
+# Ejecutar entrenamiento completo con aceleración GPU (FP16/BF16)
+bash scripts/run_gpu_training.sh
+```
+Los checkpoints se guardarán en `checkpoints/` y los archivos de predicción formateados para Codabench en `results/`.
