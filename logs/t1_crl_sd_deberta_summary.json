@@ -1,0 +1,49 @@
+{
+  "run_name": "t1_crl_sd_deberta",
+  "track": "track1",
+  "method": "crl_sd",
+  "model": "microsoft/deberta-v3-base",
+  "device": "cuda",
+  "test_run": false,
+  "timestamp": "2026-11-02T17:07:33.615290+00:00",
+  "elapsed_seconds": 24.881,
+  "metrics": {
+    "weighted_f1": 0.22857142857142862,
+    "soft_cons": 1.0,
+    "hard_cons": 0.4
+  },
+  "submission_file": "results/t1_crl_sd_deberta_submission.csv",
+  "train_summary": {
+    "status": "completed",
+    "mode": "pytorch",
+    "best_epoch": 1,
+    "best_metric": 0.22857142857142862,
+    "total_time_sec": 19.51,
+    "history": [
+      {
+        "epoch": 1,
+        "step": 2,
+        "train_loss": 1.4461,
+        "weighted_f1": 0.2286,
+        "soft_cons": 1.0,
+        "hard_cons": 0.4
+      },
+      {
+        "epoch": 2,
+        "step": 4,
+        "train_loss": 1.4106,
+        "weighted_f1": 0.2286,
+        "soft_cons": 1.0,
+        "hard_cons": 0.4
+      },
+      {
+        "epoch": 3,
+        "step": 6,
+        "train_loss": 1.4007,
+        "weighted_f1": 0.2286,
+        "soft_cons": 1.0,
+        "hard_cons": 0.4
+      }
+    ]
+  }
+}

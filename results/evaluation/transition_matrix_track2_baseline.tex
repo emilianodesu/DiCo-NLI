@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{l|cccc|r|c}
+\toprule
+\textbf{Direct $\downarrow$ / Reverse $\rightarrow$} & \textbf{EQU} & \textbf{FWD} & \textbf{BWD} & \textbf{NEG} & \textbf{Total} & \textbf{$P(\text{target} \mid \text{dir})$} \\
+\midrule
+\textbf{EQU} & \textbf{6} & 0 & 0 & 0 & 6 & 100.0\% \\
+\textbf{FWD} & 1 & \underline{0} & \textbf{5} & 0 & 6 & 83.3\% \\
+\textbf{BWD} & 0 & \textbf{0} & \underline{3} & 0 & 3 & 0.0\% \\
+\textbf{NEG} & 0 & 0 & 0 & \textbf{0} & 0 & 0.0\% \\
+\midrule
+\textbf{Total Reverse} & 7 & 0 & 8 & 0 & \textbf{15} & \textbf{SoftCons:} 73.3\% \\
+\bottomrule
+\end{tabular}
+\caption{Directional Transition Matrix for Track 2 (Spanish) (Baseline). Bold values indicate consistent involution targets; underlined values indicate Reversal Curse loops. Violation Rate: 26.7\%, RCSI: 33.3\%, Frobenius: 1.748.}
+\label{tab:transition_matrix}
+\end{table}

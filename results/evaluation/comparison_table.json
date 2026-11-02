@@ -1,0 +1,327 @@
+{
+  "title": "Experimental Evaluation & Reversal Mitigation Benchmark",
+  "total_results": 15,
+  "tracks": [
+    "track1",
+    "track2"
+  ],
+  "methods": [
+    "baseline",
+    "bsa",
+    "crl",
+    "crl_sd",
+    "sd"
+  ],
+  "results": [
+    {
+      "track": "track1",
+      "track_display": "Track 1 (English)",
+      "method": "baseline",
+      "method_display": "Baseline",
+      "model": "DeBERTa-v3",
+      "split": "dev",
+      "weighted_f1": 0.228571,
+      "soft_cons": 1.0,
+      "hard_cons": 0.4,
+      "delta_f1": 0.0,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t1_baseline_deberta_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t1_baseline_deberta_summary.json"
+      }
+    },
+    {
+      "track": "track1",
+      "track_display": "Track 1 (English)",
+      "method": "bsa",
+      "method_display": "BSA",
+      "model": "DeBERTa-v3",
+      "split": "dev",
+      "weighted_f1": 0.228571,
+      "soft_cons": 1.0,
+      "hard_cons": 0.4,
+      "delta_f1": 0.0,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t1_bsa_deberta_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t1_bsa_deberta_summary.json"
+      }
+    },
+    {
+      "track": "track1",
+      "track_display": "Track 1 (English)",
+      "method": "crl",
+      "method_display": "CRL",
+      "model": "DeBERTa-v3",
+      "split": "dev",
+      "weighted_f1": 0.32,
+      "soft_cons": 0.466667,
+      "hard_cons": 0.4,
+      "delta_f1": 0.091429,
+      "delta_soft_cons": -0.533333,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t1_crl_deberta_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t1_crl_deberta_summary.json"
+      }
+    },
+    {
+      "track": "track1",
+      "track_display": "Track 1 (English)",
+      "method": "sd",
+      "method_display": "SD",
+      "model": "DeBERTa-v3",
+      "split": "dev",
+      "weighted_f1": 0.228571,
+      "soft_cons": 1.0,
+      "hard_cons": 0.4,
+      "delta_f1": 0.0,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t1_sd_deberta_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t1_sd_deberta_summary.json"
+      }
+    },
+    {
+      "track": "track1",
+      "track_display": "Track 1 (English)",
+      "method": "crl_sd",
+      "method_display": "CRL + SD",
+      "model": "DeBERTa-v3",
+      "split": "dev",
+      "weighted_f1": 0.228571,
+      "soft_cons": 1.0,
+      "hard_cons": 0.4,
+      "delta_f1": 0.0,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t1_crl_sd_deberta_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t1_crl_sd_deberta_summary.json"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "baseline",
+      "method_display": "Baseline",
+      "model": "BETO",
+      "split": "dev",
+      "weighted_f1": 0.825069,
+      "soft_cons": 0.733333,
+      "hard_cons": 0.733333,
+      "delta_f1": 0.0,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 31,
+      "num_pairs": 15,
+      "submission_file": "results/t2_baseline_beto_submission.csv",
+      "metadata": {
+        "source": "evaluated_csv"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "bsa",
+      "method_display": "BSA",
+      "model": "BETO",
+      "split": "dev",
+      "weighted_f1": 0.856891,
+      "soft_cons": 0.8,
+      "hard_cons": 0.8,
+      "delta_f1": 0.031822,
+      "delta_soft_cons": 0.066667,
+      "delta_hard_cons": 0.066667,
+      "num_instances": 31,
+      "num_pairs": 15,
+      "submission_file": "results/t2_bsa_beto_submission.csv",
+      "metadata": {
+        "source": "evaluated_csv"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "crl",
+      "method_display": "CRL",
+      "model": "BETO",
+      "split": "dev",
+      "weighted_f1": 0.826037,
+      "soft_cons": 0.733333,
+      "hard_cons": 0.733333,
+      "delta_f1": 0.000968,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 31,
+      "num_pairs": 15,
+      "submission_file": "results/t2_crl_beto_submission.csv",
+      "metadata": {
+        "source": "evaluated_csv"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "sd",
+      "method_display": "SD",
+      "model": "BETO",
+      "split": "dev",
+      "weighted_f1": 0.888629,
+      "soft_cons": 1.0,
+      "hard_cons": 0.933333,
+      "delta_f1": 0.06356,
+      "delta_soft_cons": 0.266667,
+      "delta_hard_cons": 0.2,
+      "num_instances": 31,
+      "num_pairs": 15,
+      "submission_file": "results/t2_sd_beto_submission.csv",
+      "metadata": {
+        "source": "evaluated_csv"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "crl_sd",
+      "method_display": "CRL + SD",
+      "model": "BETO",
+      "split": "dev",
+      "weighted_f1": 0.889643,
+      "soft_cons": 1.0,
+      "hard_cons": 0.933333,
+      "delta_f1": 0.064574,
+      "delta_soft_cons": 0.266667,
+      "delta_hard_cons": 0.2,
+      "num_instances": 31,
+      "num_pairs": 15,
+      "submission_file": "results/t2_crl_sd_beto_submission.csv",
+      "metadata": {
+        "source": "evaluated_csv"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "baseline",
+      "method_display": "Baseline",
+      "model": "dccuchile/bert-base-spanish-wwm-cased",
+      "split": "dev",
+      "weighted_f1": 0.864,
+      "soft_cons": 0.733333,
+      "hard_cons": 0.733333,
+      "delta_f1": 0.0,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t2_baseline_beto_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t2_baseline_beto_summary.json"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "bsa",
+      "method_display": "BSA",
+      "model": "dccuchile/bert-base-spanish-wwm-cased",
+      "split": "dev",
+      "weighted_f1": 0.897143,
+      "soft_cons": 0.8,
+      "hard_cons": 0.8,
+      "delta_f1": 0.033143,
+      "delta_soft_cons": 0.066667,
+      "delta_hard_cons": 0.066667,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t2_bsa_beto_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t2_bsa_beto_summary.json"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "crl",
+      "method_display": "CRL",
+      "model": "dccuchile/bert-base-spanish-wwm-cased",
+      "split": "dev",
+      "weighted_f1": 0.865,
+      "soft_cons": 0.733333,
+      "hard_cons": 0.733333,
+      "delta_f1": 0.001,
+      "delta_soft_cons": 0.0,
+      "delta_hard_cons": 0.0,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t2_crl_beto_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t2_crl_beto_summary.json"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "sd",
+      "method_display": "SD",
+      "model": "dccuchile/bert-base-spanish-wwm-cased",
+      "split": "dev",
+      "weighted_f1": 0.933937,
+      "soft_cons": 1.0,
+      "hard_cons": 0.933333,
+      "delta_f1": 0.069937,
+      "delta_soft_cons": 0.266667,
+      "delta_hard_cons": 0.2,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t2_sd_beto_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t2_sd_beto_summary.json"
+      }
+    },
+    {
+      "track": "track2",
+      "track_display": "Track 2 (Spanish)",
+      "method": "crl_sd",
+      "method_display": "CRL + SD",
+      "model": "dccuchile/bert-base-spanish-wwm-cased",
+      "split": "dev",
+      "weighted_f1": 0.933333,
+      "soft_cons": 1.0,
+      "hard_cons": 0.933333,
+      "delta_f1": 0.069333,
+      "delta_soft_cons": 0.266667,
+      "delta_hard_cons": 0.2,
+      "num_instances": 0,
+      "num_pairs": 0,
+      "submission_file": "results/t2_crl_sd_beto_submission.csv",
+      "metadata": {
+        "source": "log_summary",
+        "file": "logs/t2_crl_sd_beto_summary.json"
+      }
+    }
+  ]
+}

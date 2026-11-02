@@ -1,0 +1,178 @@
+{
+  "report": {
+    "method": "crl",
+    "track": "track2",
+    "overall_weighted_f1": 0.8260368663594471,
+    "overall_soft_cons": 0.7333333333333333,
+    "overall_hard_cons": 0.7333333333333333,
+    "total_instances": 31,
+    "total_pairs": 15,
+    "categories": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.7999999999999999,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.5555555555555556,
+        "soft_cons": 0.3333333333333333,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 2,
+        "entailment_loop_rate": 0.6666666666666666,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 1.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.75,
+        "soft_cons": 0.5,
+        "hard_cons": 0.5,
+        "entailment_loop_count": 2,
+        "entailment_loop_rate": 0.5,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.6666666666666666
+      }
+    },
+    "vulnerable_categories": [
+      [
+        "quantificational",
+        1.0
+      ],
+      [
+        "verbal",
+        0.6666666666666666
+      ],
+      [
+        "adverbial",
+        0.0
+      ],
+      [
+        "nominal",
+        0.0
+      ],
+      [
+        "prepositional",
+        0.0
+      ]
+    ],
+    "error_cases": [
+      {
+        "pair_id": "dico_phrasis_2000005",
+        "category": "quantificational",
+        "text1": "nueve ni\u00f1os entusiastas",
+        "text2": "varios ni\u00f1os",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Quantificational Chunk: Monotonicity entailment from specific to general bound correctly identified, but model fails to reverse the quantifier entailment arrow under argument reversal.",
+        "method": "crl"
+      },
+      {
+        "pair_id": "dico_phrasis_2000015",
+        "category": "quantificational",
+        "text1": "todos asistieron",
+        "text2": "alguien asisti\u00f3",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Quantificational Chunk: Monotonicity entailment from specific to general bound correctly identified, but model fails to reverse the quantifier entailment arrow under argument reversal.",
+        "method": "crl"
+      },
+      {
+        "pair_id": "dico_phrasis_2000012",
+        "category": "verbal",
+        "text1": "est\u00e1n bailando con alegr\u00eda",
+        "text2": "se est\u00e1n moviendo",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Verbal Chunk: Model detects event subsumption ('est\u00e1n bailando con alegr\u00eda' -> 'se est\u00e1n moviendo'), but high lexical overlap causes spurious forward entailment under reversal ('se est\u00e1n moviendo' -> 'est\u00e1n bailando con alegr\u00eda'), failing to recognize that hyponymic verbs do not reverse.",
+        "method": "crl"
+      },
+      {
+        "pair_id": "dico_phrasis_2000014",
+        "category": "verbal",
+        "text1": "caminando muy despacio",
+        "text2": "caminando despacio",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "BACKWARD_ENTAILMENT",
+        "pred_rev": "BACKWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Verbal Chunk: Model detects event subsumption ('caminando muy despacio' -> 'caminando despacio'), but high lexical overlap causes spurious forward entailment under reversal ('caminando despacio' -> 'caminando muy despacio'), failing to recognize that hyponymic verbs do not reverse.",
+        "method": "crl"
+      }
+    ]
+  },
+  "cross_report": null
+}

@@ -1,0 +1,66 @@
+2026-11-02 11:06:35 | INFO    | dico_nli.train | ======================================================================
+2026-11-02 11:06:35 | INFO    | dico_nli.train | SemEval-2027 Task 2 Pipeline — Run: t1_sd_deberta
+2026-11-02 11:06:35 | INFO    | dico_nli.train | Track: track1 | Method: sd | Model: microsoft/deberta-v3-base
+2026-11-02 11:06:35 | INFO    | dico_nli.train | Device: cuda | Mixed Precision: fp16=False, bf16=True
+2026-11-02 11:06:35 | INFO    | dico_nli.train | Mode: train_eval | Test Run: False
+2026-11-02 11:06:35 | INFO    | dico_nli.train | ======================================================================
+2026-11-02 11:06:35 | INFO    | dico_nli.train | Loading data splits for track='track1' from 'data'...
+2026-11-02 11:06:35 | INFO    | dico_nli.train | Loaded 59 train instances and 31 dev instances.
+2026-11-02 11:06:35 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+2026-11-02 11:06:35 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-02 11:06:35 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-02 11:06:35 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+2026-11-02 11:06:35 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+2026-11-02 11:06:36 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+/data/DiCo-NLI/.venv/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-11-02 11:06:36 | INFO    | httpx2 | HTTP Request: HEAD https://huggingface.co/microsoft/deberta-v3-base/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-02 11:06:36 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-02 11:06:37 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+2026-11-02 11:06:37 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/commits/main "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/198 [00:00<?, ?it/s]Loading weights: 100%|██████████| 198/198 [00:00<00:00, 44817.71it/s]
+[transformers] [1mDebertaV2ForSequenceClassification LOAD REPORT[0m from: microsoft/deberta-v3-base
+Key                                     | Status     | 
+----------------------------------------+------------+-
+lm_predictions.lm_head.dense.bias       | UNEXPECTED | 
+lm_predictions.lm_head.dense.weight     | UNEXPECTED | 
+lm_predictions.lm_head.LayerNorm.bias   | UNEXPECTED | 
+mask_predictions.classifier.weight      | UNEXPECTED | 
+mask_predictions.LayerNorm.weight       | UNEXPECTED | 
+lm_predictions.lm_head.LayerNorm.weight | UNEXPECTED | 
+lm_predictions.lm_head.bias             | UNEXPECTED | 
+mask_predictions.dense.weight           | UNEXPECTED | 
+mask_predictions.classifier.bias        | UNEXPECTED | 
+mask_predictions.LayerNorm.bias         | UNEXPECTED | 
+mask_predictions.dense.bias             | UNEXPECTED | 
+classifier.bias                         | MISSING    | 
+classifier.weight                       | MISSING    | 
+pooler.dense.bias                       | MISSING    | 
+pooler.dense.weight                     | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-11-02 11:06:37 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/discussions?p=0 "HTTP/1.1 200 OK"
+2026-11-02 11:06:37 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/commits/refs%2Fpr%2F14 "HTTP/1.1 200 OK"
+2026-11-02 11:06:37 | INFO    | httpx2 | HTTP Request: HEAD https://huggingface.co/microsoft/deberta-v3-base/resolve/refs%2Fpr%2F14/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-11-02 11:06:37 | INFO    | httpx2 | HTTP Request: HEAD https://huggingface.co/microsoft/deberta-v3-base/resolve/refs%2Fpr%2F14/model.safetensors "HTTP/1.1 302 Found"
+2026-11-02 11:06:37 | INFO    | src.training.trainer | Initializing Real PyTorch Training on device: cuda
+2026-11-02 11:06:39 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+2026-11-02 11:06:39 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-02 11:06:39 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-02 11:06:39 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/microsoft/deberta-v3-base "HTTP/1.1 200 OK"
+2026-11-02 11:06:44 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t1_sd_deberta/t1_sd_deberta/best_model.pt
+2026-11-02 11:06:48 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t1_sd_deberta/t1_sd_deberta/checkpoint_last.pt
+2026-11-02 11:06:52 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t1_sd_deberta/t1_sd_deberta/checkpoint_last.pt
+2026-11-02 11:06:56 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t1_sd_deberta/t1_sd_deberta/checkpoint_last.pt
+2026-11-02 11:06:58 | INFO    | dico_nli.train | Verified Codabench submission exported to: results/t1_sd_deberta_submission.csv
+2026-11-02 11:06:58 | INFO    | dico_nli.train | Saved run summary to: logs/t1_sd_deberta_summary.json
+2026-11-02 11:06:58 | INFO    | dico_nli.train | ======================================================================
+2026-11-02 11:06:58 | INFO    | dico_nli.train | OFFICIAL EVALUATION METRICS:
+2026-11-02 11:06:58 | INFO    | dico_nli.train |   Weighted F1 : 0.228571
+2026-11-02 11:06:58 | INFO    | dico_nli.train |   SoftCons    : 1.000000
+2026-11-02 11:06:58 | INFO    | dico_nli.train |   HardCons    : 0.400000
+2026-11-02 11:06:58 | INFO    | dico_nli.train |   Runtime     : 25.22s
+2026-11-02 11:06:58 | INFO    | dico_nli.train | ======================================================================

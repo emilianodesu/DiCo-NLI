@@ -1,0 +1,170 @@
+{
+  "labels": [
+    "EQUIVALENCE",
+    "FORWARD_ENTAILMENT",
+    "BACKWARD_ENTAILMENT",
+    "NEGATIVE_OTHER"
+  ],
+  "total_instances": 31,
+  "accuracy": 0.3870967741935484,
+  "macro_f1": 0.13953488372093023,
+  "weighted_f1": 0.21605401350337583,
+  "raw_matrix": [
+    [
+      12,
+      0,
+      0,
+      0
+    ],
+    [
+      9,
+      0,
+      0,
+      0
+    ],
+    [
+      9,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "row_normalized": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "col_normalized": [
+    [
+      0.3870967741935484,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.2903225806451613,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.2903225806451613,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.03225806451612903,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "total_normalized": [
+    [
+      0.3870967741935484,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.2903225806451613,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.2903225806451613,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.03225806451612903,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "per_class": {
+    "EQUIVALENCE": {
+      "label": "EQUIVALENCE",
+      "support": 12,
+      "predicted_count": 31,
+      "tp": 12,
+      "fp": 19,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.3870967741935484,
+      "recall": 1.0,
+      "f1": 0.5581395348837209,
+      "specificity": 0.0
+    },
+    "FORWARD_ENTAILMENT": {
+      "label": "FORWARD_ENTAILMENT",
+      "support": 9,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "tn": 22,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0
+    },
+    "BACKWARD_ENTAILMENT": {
+      "label": "BACKWARD_ENTAILMENT",
+      "support": 9,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "tn": 22,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0
+    },
+    "NEGATIVE_OTHER": {
+      "label": "NEGATIVE_OTHER",
+      "support": 1,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 30,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0
+    }
+  }
+}

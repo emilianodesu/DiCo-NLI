@@ -1,0 +1,253 @@
+{
+  "report": {
+    "method": "sd",
+    "track": "track1",
+    "overall_weighted_f1": 0.21605401350337583,
+    "overall_soft_cons": 1.0,
+    "overall_hard_cons": 0.4,
+    "total_instances": 31,
+    "total_pairs": 15,
+    "categories": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.12698412698412698,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.1,
+        "soft_cons": 1.0,
+        "hard_cons": 0.25,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      }
+    },
+    "vulnerable_categories": [
+      [
+        "adverbial",
+        0.0
+      ],
+      [
+        "nominal",
+        0.0
+      ],
+      [
+        "prepositional",
+        0.0
+      ],
+      [
+        "quantificational",
+        0.0
+      ],
+      [
+        "verbal",
+        0.0
+      ]
+    ],
+    "error_cases": [
+      {
+        "pair_id": "dico_phrasis_2000001",
+        "category": "nominal",
+        "text1": "Pope Francis",
+        "text2": "pope",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Nominal Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000011",
+        "category": "nominal",
+        "text1": "a young boy",
+        "text2": "a child",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Nominal Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000003",
+        "category": "prepositional",
+        "text1": "in the center of Madrid",
+        "text2": "in Spain",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Prepositional Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000008",
+        "category": "prepositional",
+        "text1": "with a tennis racket",
+        "text2": "with sports equipment",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Prepositional Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000005",
+        "category": "quantificational",
+        "text1": "nine energetic children",
+        "text2": "several children",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Quantificational Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000015",
+        "category": "quantificational",
+        "text1": "everyone attended",
+        "text2": "someone attended",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Quantificational Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000002",
+        "category": "verbal",
+        "text1": "is sprinting across the field",
+        "text2": "is running",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Verbal Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000012",
+        "category": "verbal",
+        "text1": "are dancing joyfully",
+        "text2": "are moving",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Verbal Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      },
+      {
+        "pair_id": "dico_phrasis_2000014",
+        "category": "verbal",
+        "text1": "walking quite slowly",
+        "text2": "walking slowly",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "EQUIVALENCE",
+        "pred_rev": "EQUIVALENCE",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "GENERAL_MISCLASSIFICATION",
+        "diagnosis": "General Misclassification in Verbal Chunk: Expected FORWARD_ENTAILMENT / BACKWARD_ENTAILMENT, predicted EQUIVALENCE / EQUIVALENCE.",
+        "method": "sd"
+      }
+    ]
+  },
+  "cross_report": null
+}

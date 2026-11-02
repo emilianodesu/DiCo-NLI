@@ -1,0 +1,133 @@
+{
+  "report": {
+    "method": "crl_sd",
+    "track": "track2",
+    "overall_weighted_f1": 0.8896434634974533,
+    "overall_soft_cons": 1.0,
+    "overall_hard_cons": 0.9333333333333333,
+    "total_instances": 31,
+    "total_pairs": 15,
+    "categories": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.7999999999999999,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.75,
+        "soft_cons": 1.0,
+        "hard_cons": 0.75,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      }
+    },
+    "vulnerable_categories": [
+      [
+        "adverbial",
+        0.0
+      ],
+      [
+        "nominal",
+        0.0
+      ],
+      [
+        "prepositional",
+        0.0
+      ],
+      [
+        "quantificational",
+        0.0
+      ],
+      [
+        "verbal",
+        0.0
+      ]
+    ],
+    "error_cases": [
+      {
+        "pair_id": "dico_phrasis_2000014",
+        "category": "verbal",
+        "text1": "caminando muy despacio",
+        "text2": "caminando despacio",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "BACKWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": true,
+        "is_hard_correct": false,
+        "error_type": "DIRECTIONAL_FLIP",
+        "diagnosis": "Directional Entailment Flip in Verbal Chunk: Model inverted the directional entailment arrow (predicted 'BACKWARD_ENTAILMENT' for gold 'FORWARD_ENTAILMENT').",
+        "method": "crl_sd"
+      }
+    ]
+  },
+  "cross_report": null
+}

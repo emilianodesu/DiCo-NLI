@@ -1,0 +1,49 @@
+{
+  "run_name": "t2_baseline_beto",
+  "track": "track2",
+  "method": "baseline",
+  "model": "dccuchile/bert-base-spanish-wwm-cased",
+  "device": "cuda",
+  "test_run": false,
+  "timestamp": "2026-11-02T17:08:12.633159+00:00",
+  "elapsed_seconds": 28.84,
+  "metrics": {
+    "weighted_f1": 0.864,
+    "soft_cons": 0.7333333333333333,
+    "hard_cons": 0.7333333333333333
+  },
+  "submission_file": "results/t2_baseline_beto_submission.csv",
+  "train_summary": {
+    "status": "completed",
+    "mode": "pytorch",
+    "best_epoch": 2,
+    "best_metric": 0.864,
+    "total_time_sec": 15.22,
+    "history": [
+      {
+        "epoch": 1,
+        "step": 4,
+        "train_loss": 1.42,
+        "weighted_f1": 0.5366,
+        "soft_cons": 0.4,
+        "hard_cons": 0.3333
+      },
+      {
+        "epoch": 2,
+        "step": 8,
+        "train_loss": 1.2227,
+        "weighted_f1": 0.864,
+        "soft_cons": 0.7333,
+        "hard_cons": 0.7333
+      },
+      {
+        "epoch": 3,
+        "step": 12,
+        "train_loss": 1.1271,
+        "weighted_f1": 0.864,
+        "soft_cons": 0.7333,
+        "hard_cons": 0.7333
+      }
+    ]
+  }
+}

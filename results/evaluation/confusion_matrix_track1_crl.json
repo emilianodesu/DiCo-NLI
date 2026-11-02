@@ -1,0 +1,170 @@
+{
+  "labels": [
+    "EQUIVALENCE",
+    "FORWARD_ENTAILMENT",
+    "BACKWARD_ENTAILMENT",
+    "NEGATIVE_OTHER"
+  ],
+  "total_instances": 31,
+  "accuracy": 0.41935483870967744,
+  "macro_f1": 0.23571428571428574,
+  "weighted_f1": 0.3142857142857143,
+  "raw_matrix": [
+    [
+      12,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      5
+    ],
+    [
+      2,
+      0,
+      0,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "row_normalized": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.4444444444444444,
+      0.0,
+      0.0,
+      0.5555555555555556
+    ],
+    [
+      0.2222222222222222,
+      0.0,
+      0.0,
+      0.7777777777777778
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "col_normalized": [
+    [
+      0.6666666666666666,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.2222222222222222,
+      0.0,
+      0.0,
+      0.38461538461538464
+    ],
+    [
+      0.1111111111111111,
+      0.0,
+      0.0,
+      0.5384615384615384
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.07692307692307693
+    ]
+  ],
+  "total_normalized": [
+    [
+      0.3870967741935484,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.12903225806451613,
+      0.0,
+      0.0,
+      0.16129032258064516
+    ],
+    [
+      0.06451612903225806,
+      0.0,
+      0.0,
+      0.22580645161290322
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.03225806451612903
+    ]
+  ],
+  "per_class": {
+    "EQUIVALENCE": {
+      "label": "EQUIVALENCE",
+      "support": 12,
+      "predicted_count": 18,
+      "tp": 12,
+      "fp": 6,
+      "fn": 0,
+      "tn": 13,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8,
+      "specificity": 0.6842105263157895
+    },
+    "FORWARD_ENTAILMENT": {
+      "label": "FORWARD_ENTAILMENT",
+      "support": 9,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "tn": 22,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0
+    },
+    "BACKWARD_ENTAILMENT": {
+      "label": "BACKWARD_ENTAILMENT",
+      "support": 9,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "tn": 22,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0
+    },
+    "NEGATIVE_OTHER": {
+      "label": "NEGATIVE_OTHER",
+      "support": 1,
+      "predicted_count": 13,
+      "tp": 1,
+      "fp": 12,
+      "fn": 0,
+      "tn": 18,
+      "precision": 0.07692307692307693,
+      "recall": 1.0,
+      "f1": 0.14285714285714288,
+      "specificity": 0.6
+    }
+  }
+}

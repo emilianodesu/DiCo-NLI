@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{l|cccc|r|ccc}
+\toprule
+\textbf{Gold $\downarrow$ / Pred $\rightarrow$} & \textbf{EQU} & \textbf{FWD} & \textbf{BWD} & \textbf{NEG} & \textbf{Total} & \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\
+\midrule
+\textbf{EQU} & \textbf{12} & 0 & 0 & 0 & 12 & 0.400 & 1.000 & 0.571 \\
+\textbf{FWD} & 9 & \textbf{0} & 0 & 0 & 9 & 0.000 & 0.000 & 0.000 \\
+\textbf{BWD} & 9 & 0 & \textbf{0} & 0 & 9 & 0.000 & 0.000 & 0.000 \\
+\textbf{NEG} & 0 & 0 & 0 & \textbf{1} & 1 & 1.000 & 1.000 & 1.000 \\
+\midrule
+\textbf{Total Pred} & 30 & 0 & 0 & 1 & \textbf{31} & \multicolumn{3}{c}{\textbf{Acc:} 0.419 $\mid$ \textbf{WF1:} 0.253} \\
+\bottomrule
+\end{tabular}
+\caption{Confusion Matrix for Track 1 (English) (CRL + SD)}
+\label{tab:confusion_matrix}
+\end{table}

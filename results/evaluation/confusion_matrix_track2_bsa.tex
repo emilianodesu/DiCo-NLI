@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{l|cccc|r|ccc}
+\toprule
+\textbf{Gold $\downarrow$ / Pred $\rightarrow$} & \textbf{EQU} & \textbf{FWD} & \textbf{BWD} & \textbf{NEG} & \textbf{Total} & \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\
+\midrule
+\textbf{EQU} & \textbf{12} & 0 & 0 & 0 & 12 & 1.000 & 1.000 & 1.000 \\
+\textbf{FWD} & 0 & \textbf{6} & 3 & 0 & 9 & 1.000 & 0.667 & 0.800 \\
+\textbf{BWD} & 0 & 0 & \textbf{9} & 0 & 9 & 0.692 & 1.000 & 0.818 \\
+\textbf{NEG} & 0 & 0 & 1 & \textbf{0} & 1 & 0.000 & 0.000 & 0.000 \\
+\midrule
+\textbf{Total Pred} & 12 & 6 & 13 & 0 & \textbf{31} & \multicolumn{3}{c}{\textbf{Acc:} 0.871 $\mid$ \textbf{WF1:} 0.857} \\
+\bottomrule
+\end{tabular}
+\caption{Confusion Matrix for Track 2 (Spanish) (BSA)}
+\label{tab:confusion_matrix}
+\end{table}

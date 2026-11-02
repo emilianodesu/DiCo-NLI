@@ -1,0 +1,170 @@
+{
+  "labels": [
+    "EQUIVALENCE",
+    "FORWARD_ENTAILMENT",
+    "BACKWARD_ENTAILMENT",
+    "NEGATIVE_OTHER"
+  ],
+  "total_instances": 31,
+  "accuracy": 0.8709677419354839,
+  "macro_f1": 0.6545454545454545,
+  "weighted_f1": 0.8568914956011731,
+  "raw_matrix": [
+    [
+      12,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      6,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      9,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "row_normalized": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.6666666666666666,
+      0.3333333333333333,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "col_normalized": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.23076923076923078,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.6923076923076923,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.07692307692307693,
+      0.0
+    ]
+  ],
+  "total_normalized": [
+    [
+      0.3870967741935484,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.1935483870967742,
+      0.0967741935483871,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.2903225806451613,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.03225806451612903,
+      0.0
+    ]
+  ],
+  "per_class": {
+    "EQUIVALENCE": {
+      "label": "EQUIVALENCE",
+      "support": 12,
+      "predicted_count": 12,
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 19,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "specificity": 1.0
+    },
+    "FORWARD_ENTAILMENT": {
+      "label": "FORWARD_ENTAILMENT",
+      "support": 9,
+      "predicted_count": 6,
+      "tp": 6,
+      "fp": 0,
+      "fn": 3,
+      "tn": 22,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "specificity": 1.0
+    },
+    "BACKWARD_ENTAILMENT": {
+      "label": "BACKWARD_ENTAILMENT",
+      "support": 9,
+      "predicted_count": 13,
+      "tp": 9,
+      "fp": 4,
+      "fn": 0,
+      "tn": 18,
+      "precision": 0.6923076923076923,
+      "recall": 1.0,
+      "f1": 0.8181818181818181,
+      "specificity": 0.8181818181818182
+    },
+    "NEGATIVE_OTHER": {
+      "label": "NEGATIVE_OTHER",
+      "support": 1,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 30,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0
+    }
+  }
+}

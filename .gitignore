@@ -34,7 +34,7 @@ wheels/
 
 # PyTorch checkpoints and model weights
 checkpoints/
-models/
+/models/
 *.pt
 *.pth
 *.bin
@@ -42,7 +42,5 @@ models/
 wandb/
 
 # Intermediate and output data (except small sample/demo files)
-results/
-logs/
 cache/
 .cache/

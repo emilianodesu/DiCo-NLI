@@ -1,0 +1,4 @@
+{"epoch": 1, "step": 6, "train_loss": 1.6783, "val_loss": 1.7622, "weighted_f1": 1.0, "soft_cons": 1.0, "hard_cons": 1.0, "epoch_time_sec": 0.004, "timestamp": 1793638684.3174257}
+{"epoch": 1, "step": 2, "train_loss": 1.4354, "weighted_f1": 0.6746, "soft_cons": 0.4, "hard_cons": 0.4, "timestamp": 1793639360.3740616}
+{"epoch": 2, "step": 4, "train_loss": 1.2484, "weighted_f1": 0.7472, "soft_cons": 0.6667, "hard_cons": 0.6, "timestamp": 1793639367.0471237}
+{"epoch": 3, "step": 6, "train_loss": 1.1719, "weighted_f1": 0.865, "soft_cons": 0.7333, "hard_cons": 0.7333, "timestamp": 1793639372.5197773}

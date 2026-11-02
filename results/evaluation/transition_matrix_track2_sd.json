@@ -1,0 +1,133 @@
+{
+  "labels": [
+    "EQUIVALENCE",
+    "FORWARD_ENTAILMENT",
+    "BACKWARD_ENTAILMENT",
+    "NEGATIVE_OTHER"
+  ],
+  "total_pairs": 15,
+  "raw_matrix": [
+    [
+      7,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      8,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "conditional_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "joint_matrix": [
+    [
+      0.4666666666666667,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.5333333333333333,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "ideal_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "metrics": {
+    "total_pairs": 15,
+    "consistent_pairs": 15,
+    "consistent_rate": 1.0,
+    "violation_pairs": 0,
+    "violation_rate": 0.0,
+    "frobenius_distance": 1.4142135623730951,
+    "normalized_frobenius": 0.5,
+    "mean_tvd": 0.0,
+    "mean_transition_entropy": 0.0,
+    "reversal_curse_index": 0.0,
+    "equiv_to_equiv": 7,
+    "fwd_to_bwd": 8,
+    "bwd_to_fwd": 0,
+    "neg_to_neg": 0,
+    "fwd_fwd_trap": 0,
+    "bwd_bwd_trap": 0,
+    "equiv_asymmetry_count": 0,
+    "noise_collapse_count": 0
+  }
+}

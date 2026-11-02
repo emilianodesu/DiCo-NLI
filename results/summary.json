@@ -1,0 +1,125 @@
+{
+  "total_runtime": "05m50s",
+  "experiments": [
+    {
+      "run_name": "t1_baseline_deberta",
+      "track": "track1",
+      "method": "baseline",
+      "status": "SUCCESS",
+      "duration": "00m32s",
+      "weighted_f1": "0.2286",
+      "soft_cons": "1.0000",
+      "hard_cons": "0.4000",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t1_baseline_deberta_submission.csv"
+    },
+    {
+      "run_name": "t1_bsa_deberta",
+      "track": "track1",
+      "method": "bsa",
+      "status": "SUCCESS",
+      "duration": "00m31s",
+      "weighted_f1": "0.2286",
+      "soft_cons": "1.0000",
+      "hard_cons": "0.4000",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t1_bsa_deberta_submission.csv"
+    },
+    {
+      "run_name": "t1_crl_deberta",
+      "track": "track1",
+      "method": "crl",
+      "status": "SUCCESS",
+      "duration": "00m34s",
+      "weighted_f1": "0.3200",
+      "soft_cons": "0.4667",
+      "hard_cons": "0.4000",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t1_crl_deberta_submission.csv"
+    },
+    {
+      "run_name": "t1_sd_deberta",
+      "track": "track1",
+      "method": "sd",
+      "status": "SUCCESS",
+      "duration": "00m31s",
+      "weighted_f1": "0.2286",
+      "soft_cons": "1.0000",
+      "hard_cons": "0.4000",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t1_sd_deberta_submission.csv"
+    },
+    {
+      "run_name": "t1_crl_sd_deberta",
+      "track": "track1",
+      "method": "crl_sd",
+      "status": "SUCCESS",
+      "duration": "00m32s",
+      "weighted_f1": "0.2286",
+      "soft_cons": "1.0000",
+      "hard_cons": "0.4000",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t1_crl_sd_deberta_submission.csv"
+    },
+    {
+      "run_name": "t2_baseline_beto",
+      "track": "track2",
+      "method": "baseline",
+      "status": "SUCCESS",
+      "duration": "00m52s",
+      "weighted_f1": "0.8640",
+      "soft_cons": "0.7333",
+      "hard_cons": "0.7333",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t2_baseline_beto_submission.csv"
+    },
+    {
+      "run_name": "t2_bsa_beto",
+      "track": "track2",
+      "method": "bsa",
+      "status": "SUCCESS",
+      "duration": "00m30s",
+      "weighted_f1": "0.8971",
+      "soft_cons": "0.8000",
+      "hard_cons": "0.8000",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t2_bsa_beto_submission.csv"
+    },
+    {
+      "run_name": "t2_crl_beto",
+      "track": "track2",
+      "method": "crl",
+      "status": "SUCCESS",
+      "duration": "00m30s",
+      "weighted_f1": "0.8650",
+      "soft_cons": "0.7333",
+      "hard_cons": "0.7333",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t2_crl_beto_submission.csv"
+    },
+    {
+      "run_name": "t2_sd_beto",
+      "track": "track2",
+      "method": "sd",
+      "status": "SUCCESS",
+      "duration": "00m25s",
+      "weighted_f1": "0.9339",
+      "soft_cons": "1.0000",
+      "hard_cons": "0.9333",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t2_sd_beto_submission.csv"
+    },
+    {
+      "run_name": "t2_crl_sd_beto",
+      "track": "track2",
+      "method": "crl_sd",
+      "status": "SUCCESS",
+      "duration": "00m21s",
+      "weighted_f1": "0.9333",
+      "soft_cons": "1.0000",
+      "hard_cons": "0.9333",
+      "codabench_valid": "PASSED",
+      "submission_file": "results/t2_crl_sd_beto_submission.csv"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+## Experimental Evaluation & Reversal Mitigation Benchmark
+
+| Track | Model | Method | Weighted F1 | SoftCons | HardCons | ΔF1 | ΔSoftCons | ΔHardCons |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Track 1 (English) | DeBERTa-v3 | Baseline | 0.2286 | 1.0000 | 0.4000 | +0.0000 | +0.0000 | +0.0000 |
+| Track 1 (English) | DeBERTa-v3 | BSA | 0.2286 | 1.0000 | 0.4000 | +0.0000 | +0.0000 | +0.0000 |
+| Track 1 (English) | DeBERTa-v3 | CRL | 0.3200 | 0.4667 | 0.4000 | +0.0914 | -0.5333 | +0.0000 |
+| Track 1 (English) | DeBERTa-v3 | SD | 0.2286 | 1.0000 | 0.4000 | +0.0000 | +0.0000 | +0.0000 |
+| Track 1 (English) | DeBERTa-v3 | CRL + SD | 0.2286 | 1.0000 | 0.4000 | +0.0000 | +0.0000 | +0.0000 |
+| Track 2 (Spanish) | BETO | Baseline | 0.8251 | 0.7333 | 0.7333 | +0.0000 | +0.0000 | +0.0000 |
+| Track 2 (Spanish) | BETO | BSA | 0.8569 | 0.8000 | 0.8000 | +0.0318 | +0.0667 | +0.0667 |
+| Track 2 (Spanish) | BETO | CRL | 0.8260 | 0.7333 | 0.7333 | +0.0010 | +0.0000 | +0.0000 |
+| Track 2 (Spanish) | BETO | SD | 0.8886 | 1.0000 | 0.9333 | +0.0636 | +0.2667 | +0.2000 |
+| Track 2 (Spanish) | BETO | CRL + SD | 0.8896 | 1.0000 | 0.9333 | +0.0646 | +0.2667 | +0.2000 |
+| Track 2 (Spanish) | dccuchile/bert-base-spanish-wwm-cased | Baseline | 0.8640 | 0.7333 | 0.7333 | +0.0000 | +0.0000 | +0.0000 |
+| Track 2 (Spanish) | dccuchile/bert-base-spanish-wwm-cased | BSA | 0.8971 | 0.8000 | 0.8000 | +0.0331 | +0.0667 | +0.0667 |
+| Track 2 (Spanish) | dccuchile/bert-base-spanish-wwm-cased | CRL | 0.8650 | 0.7333 | 0.7333 | +0.0010 | +0.0000 | +0.0000 |
+| Track 2 (Spanish) | dccuchile/bert-base-spanish-wwm-cased | SD | 0.9339 | 1.0000 | 0.9333 | +0.0699 | +0.2667 | +0.2000 |
+| Track 2 (Spanish) | dccuchile/bert-base-spanish-wwm-cased | CRL + SD | 0.9333 | 1.0000 | 0.9333 | +0.0693 | +0.2667 | +0.2000 |

@@ -1,0 +1,29 @@
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lll ccc}
+\toprule
+\textbf{Track} & \textbf{Model} & \textbf{Method} & \textbf{Weighted F$_1$} & \textbf{SoftCons} & \textbf{HardCons} \\
+\midrule
+Track 1 (EN) & DeBERTa-v3 & Baseline & 0.2286 & \textbf{1.0000} & \textbf{0.4000} \\
+Track 1 (EN) & DeBERTa-v3 & BSA & 0.2286 & \textbf{1.0000} & \textbf{0.4000} \\
+Track 1 (EN) & DeBERTa-v3 & CRL & \textbf{0.3200} & 0.4667 & \textbf{0.4000} \\
+Track 1 (EN) & DeBERTa-v3 & SD & 0.2286 & \textbf{1.0000} & \textbf{0.4000} \\
+Track 1 (EN) & DeBERTa-v3 & CRL + SD & 0.2286 & \textbf{1.0000} & \textbf{0.4000} \\
+\midrule
+Track 2 (ES) & BETO & Baseline & 0.8251 & 0.7333 & 0.7333 \\
+Track 2 (ES) & BETO & BSA & 0.8569 & 0.8000 & 0.8000 \\
+Track 2 (ES) & BETO & CRL & 0.8260 & 0.7333 & 0.7333 \\
+Track 2 (ES) & BETO & SD & 0.8886 & \textbf{1.0000} & \textbf{0.9333} \\
+Track 2 (ES) & BETO & CRL + SD & \textbf{0.8896} & \textbf{1.0000} & \textbf{0.9333} \\
+\midrule
+Track 2 (ES) & dccuchile/bert-base-spanish-wwm-cased & Baseline & 0.8640 & 0.7333 & 0.7333 \\
+Track 2 (ES) & dccuchile/bert-base-spanish-wwm-cased & BSA & 0.8971 & 0.8000 & 0.8000 \\
+Track 2 (ES) & dccuchile/bert-base-spanish-wwm-cased & CRL & 0.8650 & 0.7333 & 0.7333 \\
+Track 2 (ES) & dccuchile/bert-base-spanish-wwm-cased & SD & \textbf{0.9339} & \textbf{1.0000} & \textbf{0.9333} \\
+Track 2 (ES) & dccuchile/bert-base-spanish-wwm-cased & CRL + SD & 0.9333 & \textbf{1.0000} & \textbf{0.9333} \\
+\bottomrule
+\end{tabular}
+\caption{Evaluation of Reversal Mitigation Strategies on SemEval-2027 Task 2 PhrasIS Benchmark.}
+\label{tab:main_results}
+\end{table}

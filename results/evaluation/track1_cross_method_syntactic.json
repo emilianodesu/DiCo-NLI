@@ -1,0 +1,593 @@
+{
+  "track": "track1",
+  "methods": [
+    "baseline",
+    "bsa",
+    "crl",
+    "sd",
+    "crl_sd"
+  ],
+  "categories": [
+    "adverbial",
+    "nominal",
+    "prepositional",
+    "quantificational",
+    "verbal"
+  ],
+  "metrics": {
+    "baseline": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.12698412698412698,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.1,
+        "soft_cons": 1.0,
+        "hard_cons": 0.25,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      }
+    },
+    "bsa": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.12698412698412698,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.1,
+        "soft_cons": 1.0,
+        "hard_cons": 0.25,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      }
+    },
+    "crl": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.26190476190476186,
+        "soft_cons": 0.3333333333333333,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 2,
+        "noise_collapse_rate": 0.6666666666666666,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.3333333333333333,
+        "soft_cons": 0.3333333333333333,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 2,
+        "noise_collapse_rate": 0.6666666666666666,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.1904761904761905,
+        "soft_cons": 0.6666666666666666,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 1,
+        "noise_collapse_rate": 0.3333333333333333,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.2,
+        "soft_cons": 0.25,
+        "hard_cons": 0.25,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 3,
+        "noise_collapse_rate": 0.75,
+        "reversal_curse_index": 0.0
+      }
+    },
+    "sd": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.12698412698412698,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.1,
+        "soft_cons": 1.0,
+        "hard_cons": 0.25,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      }
+    },
+    "crl_sd": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 1.0,
+        "soft_cons": 1.0,
+        "hard_cons": 1.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.2857142857142857,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 1.0,
+        "hard_cons": 0.3333333333333333,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.1,
+        "soft_cons": 1.0,
+        "hard_cons": 0.25,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 0,
+        "equiv_asymmetry_rate": 0.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      }
+    }
+  },
+  "deltas_vs_baseline": {
+    "baseline": {
+      "adverbial": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "nominal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "prepositional": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "quantificational": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "verbal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      }
+    },
+    "bsa": {
+      "adverbial": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "nominal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "prepositional": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "quantificational": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "verbal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      }
+    },
+    "crl": {
+      "adverbial": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "nominal": {
+        "delta_weighted_f1": 0.13492063492063489,
+        "delta_soft_cons": -0.6666666666666667,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "prepositional": {
+        "delta_weighted_f1": 0.16666666666666666,
+        "delta_soft_cons": -0.6666666666666667,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "quantificational": {
+        "delta_weighted_f1": 0.023809523809523836,
+        "delta_soft_cons": -0.33333333333333337,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "verbal": {
+        "delta_weighted_f1": 0.1,
+        "delta_soft_cons": -0.75,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      }
+    },
+    "sd": {
+      "adverbial": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "nominal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "prepositional": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "quantificational": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "verbal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      }
+    },
+    "crl_sd": {
+      "adverbial": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "nominal": {
+        "delta_weighted_f1": 0.15873015873015872,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "prepositional": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "quantificational": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      },
+      "verbal": {
+        "delta_weighted_f1": 0.0,
+        "delta_soft_cons": 0.0,
+        "delta_hard_cons": 0.0,
+        "delta_rcsi": 0.0
+      }
+    }
+  },
+  "most_vulnerable_category_baseline": "adverbial",
+  "most_improved_category_sd": "adverbial"
+}

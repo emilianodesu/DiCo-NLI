@@ -1,0 +1,30 @@
+======================================================================
+Directional Transition Matrix (Direct Rows \ Reverse Cols, N_pairs=15)
+======================================================================
+Direct \ Reverse |   EQU    |   FWD    |   BWD    |   NEG    |   Total
+----------------------------------------------------------------------
+EQU (0)      |       7* |       0  |       0  |       3  |      10
+FWD (1)      |       0  |       0! |       0* |       0  |       0
+BWD (2)      |       0  |       0* |       0! |       0  |       0
+NEG (3)      |       1  |       0  |       0  |       4* |       5
+----------------------------------------------------------------------
+Total Reverse |        8 |        0 |        0 |        7 |      15
+======================================================================
+Conditional Transition Probabilities P(Reverse | Direct):
+----------------------------------------------------------------------
+EQU (0)    -> EQU: 0.700* | FWD: 0.000  | BWD: 0.000  | NEG: 0.300 
+FWD (1)    -> EQU: 0.000  | FWD: 0.000! | BWD: 0.000* | NEG: 0.000 
+BWD (2)    -> EQU: 0.000  | FWD: 0.000* | BWD: 0.000! | NEG: 0.000 
+NEG (3)    -> EQU: 0.200  | FWD: 0.000  | BWD: 0.000  | NEG: 0.800*
+----------------------------------------------------------------------
+Legend: [*] Consistent Involution Target  [!] Reversal Curse Entailment Loop
+----------------------------------------------------------------------
+Inconsistency Diagnostics:
+  - Total Reciprocal Pairs:          15
+  - Consistent Pairs (SoftCons):      11 (73.3333%)
+  - Violation Pairs:                 4 (26.6667%)
+  - Reversal Curse Index (RCSI):     0.0000%
+  - Frobenius Distance to Ideal P:   1.5033 (Normalized: 0.5315)
+  - Mean Total Variation Distance:   0.2500
+  - Mean Transition Shannon Entropy: 0.8016 bits
+======================================================================

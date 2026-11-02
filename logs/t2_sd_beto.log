@@ -1,0 +1,61 @@
+2026-11-02 11:09:42 | INFO    | dico_nli.train | ======================================================================
+2026-11-02 11:09:42 | INFO    | dico_nli.train | SemEval-2027 Task 2 Pipeline — Run: t2_sd_beto
+2026-11-02 11:09:42 | INFO    | dico_nli.train | Track: track2 | Method: sd | Model: dccuchile/bert-base-spanish-wwm-cased
+2026-11-02 11:09:42 | INFO    | dico_nli.train | Device: cuda | Mixed Precision: fp16=False, bf16=True
+2026-11-02 11:09:42 | INFO    | dico_nli.train | Mode: train_eval | Test Run: False
+2026-11-02 11:09:42 | INFO    | dico_nli.train | ======================================================================
+2026-11-02 11:09:42 | INFO    | dico_nli.train | Loading data splits for track='track2' from 'data'...
+2026-11-02 11:09:42 | INFO    | dico_nli.train | Loaded 59 train instances and 31 dev instances.
+2026-11-02 11:09:43 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased "HTTP/1.1 200 OK"
+2026-11-02 11:09:43 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-02 11:09:43 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-02 11:09:43 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased "HTTP/1.1 200 OK"
+2026-11-02 11:09:43 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased "HTTP/1.1 200 OK"
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: HEAD https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-02 11:09:44 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased "HTTP/1.1 200 OK"
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/commits/main "HTTP/1.1 200 OK"
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/discussions?p=0 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23457.81it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: dccuchile/bert-base-spanish-wwm-cased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+bert.pooler.dense.bias                     | MISSING    | 
+bert.pooler.dense.weight                   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/commits/refs%2Fpr%2F3 "HTTP/1.1 200 OK"
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: HEAD https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased/resolve/refs%2Fpr%2F3/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-11-02 11:09:44 | INFO    | httpx2 | HTTP Request: HEAD https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased/resolve/refs%2Fpr%2F3/model.safetensors "HTTP/1.1 302 Found"
+2026-11-02 11:09:45 | INFO    | src.training.trainer | Initializing Real PyTorch Training on device: cuda
+/data/DiCo-NLI/.venv/lib/python3.14/site-packages/torch/autograd/graph.py:1113: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:949.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+2026-11-02 11:09:46 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased "HTTP/1.1 200 OK"
+2026-11-02 11:09:46 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-02 11:09:46 | INFO    | httpx2 | HTTP Request: GET https://huggingface.co/api/models/dccuchile/bert-base-spanish-wwm-cased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-02 11:09:50 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t2_sd_beto/t2_sd_beto/best_model.pt
+2026-11-02 11:09:52 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t2_sd_beto/t2_sd_beto/checkpoint_last.pt
+2026-11-02 11:09:55 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t2_sd_beto/t2_sd_beto/best_model.pt
+2026-11-02 11:09:57 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t2_sd_beto/t2_sd_beto/checkpoint_last.pt
+2026-11-02 11:09:59 | INFO    | src.training.trainer | Saved PyTorch checkpoint to checkpoints/t2_sd_beto/t2_sd_beto/checkpoint_last.pt
+2026-11-02 11:10:00 | INFO    | dico_nli.train | Verified Codabench submission exported to: results/t2_sd_beto_submission.csv
+2026-11-02 11:10:00 | INFO    | dico_nli.train | Saved run summary to: logs/t2_sd_beto_summary.json
+2026-11-02 11:10:00 | INFO    | dico_nli.train | ======================================================================
+2026-11-02 11:10:00 | INFO    | dico_nli.train | OFFICIAL EVALUATION METRICS:
+2026-11-02 11:10:00 | INFO    | dico_nli.train |   Weighted F1 : 0.933937
+2026-11-02 11:10:00 | INFO    | dico_nli.train |   SoftCons    : 1.000000
+2026-11-02 11:10:00 | INFO    | dico_nli.train |   HardCons    : 0.933333
+2026-11-02 11:10:00 | INFO    | dico_nli.train |   Runtime     : 18.99s
+2026-11-02 11:10:00 | INFO    | dico_nli.train | ======================================================================
