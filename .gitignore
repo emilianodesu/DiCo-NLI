@@ -44,3 +44,27 @@ wandb/
 # Intermediate and output data (except small sample/demo files)
 cache/
 .cache/
+
+# Temporary test logs and runs
+logs/test_*
+logs/run_*
+logs/bs_*
+logs/empty_test*
+logs/single_test*
+
+# Temporary test evaluation outputs
+results/test_*
+results/run_*
+results/test_run_artifacts/
+results/evaluation/eval_*
+
+# LaTeX compilation auxiliaries
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.bbl
+*.blg
+texput.log
