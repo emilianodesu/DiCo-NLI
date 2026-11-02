@@ -1,0 +1,920 @@
+{
+  "report": {
+    "method": "baseline",
+    "track": "track1",
+    "overall_weighted_f1": 0.1306451612903226,
+    "overall_soft_cons": 0.0,
+    "overall_hard_cons": 0.0,
+    "total_instances": 31,
+    "total_pairs": 15,
+    "categories": {
+      "adverbial": {
+        "category": "adverbial",
+        "num_instances": 4,
+        "num_pairs": 2,
+        "num_reversible_pairs": 2,
+        "weighted_f1": 0.0,
+        "soft_cons": 0.0,
+        "hard_cons": 0.0,
+        "entailment_loop_count": 0,
+        "entailment_loop_rate": 0.0,
+        "equiv_asymmetry_count": 2,
+        "equiv_asymmetry_rate": 1.0,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 0.0
+      },
+      "nominal": {
+        "category": "nominal",
+        "num_instances": 7,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.12698412698412698,
+        "soft_cons": 0.0,
+        "hard_cons": 0.0,
+        "entailment_loop_count": 2,
+        "entailment_loop_rate": 0.6666666666666666,
+        "equiv_asymmetry_count": 1,
+        "equiv_asymmetry_rate": 0.3333333333333333,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 1.0
+      },
+      "prepositional": {
+        "category": "prepositional",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 0.0,
+        "hard_cons": 0.0,
+        "entailment_loop_count": 2,
+        "entailment_loop_rate": 0.6666666666666666,
+        "equiv_asymmetry_count": 1,
+        "equiv_asymmetry_rate": 0.3333333333333333,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 1.0
+      },
+      "quantificational": {
+        "category": "quantificational",
+        "num_instances": 6,
+        "num_pairs": 3,
+        "num_reversible_pairs": 3,
+        "weighted_f1": 0.16666666666666666,
+        "soft_cons": 0.0,
+        "hard_cons": 0.0,
+        "entailment_loop_count": 2,
+        "entailment_loop_rate": 0.6666666666666666,
+        "equiv_asymmetry_count": 1,
+        "equiv_asymmetry_rate": 0.3333333333333333,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 1.0
+      },
+      "verbal": {
+        "category": "verbal",
+        "num_instances": 8,
+        "num_pairs": 4,
+        "num_reversible_pairs": 4,
+        "weighted_f1": 0.20454545454545453,
+        "soft_cons": 0.0,
+        "hard_cons": 0.0,
+        "entailment_loop_count": 3,
+        "entailment_loop_rate": 0.75,
+        "equiv_asymmetry_count": 1,
+        "equiv_asymmetry_rate": 0.25,
+        "noise_collapse_count": 0,
+        "noise_collapse_rate": 0.0,
+        "reversal_curse_index": 1.0
+      }
+    },
+    "vulnerable_categories": [
+      [
+        "nominal",
+        1.0
+      ],
+      [
+        "prepositional",
+        1.0
+      ],
+      [
+        "quantificational",
+        1.0
+      ],
+      [
+        "verbal",
+        1.0
+      ],
+      [
+        "adverbial",
+        0.0
+      ]
+    ],
+    "error_cases": [
+      {
+        "pair_id": "dico_phrasis_2000004",
+        "category": "adverbial",
+        "text1": "extremely rapidly",
+        "text2": "very fast",
+        "gold_dir": "EQUIVALENCE",
+        "gold_rev": "EQUIVALENCE",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "EQUIVALENCE_ASYMMETRY",
+        "diagnosis": "Equivalence Asymmetry in Adverbial Chunk: Ground truth relation is symmetric equivalence ('extremely rapidly' <=> 'very fast'), but model predicts asymmetric 'FORWARD_ENTAILMENT' forward and 'FORWARD_ENTAILMENT' backward, violating bidirectional equivalence invariance.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000009",
+        "category": "adverbial",
+        "text1": "with great care",
+        "text2": "carefully",
+        "gold_dir": "EQUIVALENCE",
+        "gold_rev": "EQUIVALENCE",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "EQUIVALENCE_ASYMMETRY",
+        "diagnosis": "Equivalence Asymmetry in Adverbial Chunk: Ground truth relation is symmetric equivalence ('with great care' <=> 'carefully'), but model predicts asymmetric 'FORWARD_ENTAILMENT' forward and 'FORWARD_ENTAILMENT' backward, violating bidirectional equivalence invariance.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000001",
+        "category": "nominal",
+        "text1": "Pope Francis",
+        "text2": "pope",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Nominal Chunk: Hypernymy hierarchy between 'Pope Francis' and 'pope' recognized unidirectionally, but inverted relation fails to invert to BACKWARD_ENTAILMENT.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000006",
+        "category": "nominal",
+        "text1": "the prime minister",
+        "text2": "the head of government",
+        "gold_dir": "EQUIVALENCE",
+        "gold_rev": "EQUIVALENCE",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "EQUIVALENCE_ASYMMETRY",
+        "diagnosis": "Equivalence Asymmetry in Nominal Chunk: Ground truth relation is symmetric equivalence ('the prime minister' <=> 'the head of government'), but model predicts asymmetric 'FORWARD_ENTAILMENT' forward and 'FORWARD_ENTAILMENT' backward, violating bidirectional equivalence invariance.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000011",
+        "category": "nominal",
+        "text1": "a young boy",
+        "text2": "a child",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Nominal Chunk: Hypernymy hierarchy between 'a young boy' and 'a child' recognized unidirectionally, but inverted relation fails to invert to BACKWARD_ENTAILMENT.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000003",
+        "category": "prepositional",
+        "text1": "in the center of Madrid",
+        "text2": "in Spain",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Prepositional Chunk: Model correctly captures spatial/containment hierarchy in forward direction ('in the center of Madrid' -> 'in Spain'), but repeats 'FORWARD_ENTAILMENT' under reversal ('in Spain' -> 'in the center of Madrid') due to unpenalized directional bias, failing to invert locative inclusion.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000008",
+        "category": "prepositional",
+        "text1": "with a tennis racket",
+        "text2": "with sports equipment",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Prepositional Chunk: Model correctly captures spatial/containment hierarchy in forward direction ('with a tennis racket' -> 'with sports equipment'), but repeats 'FORWARD_ENTAILMENT' under reversal ('with sports equipment' -> 'with a tennis racket') due to unpenalized directional bias, failing to invert locative inclusion.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000013",
+        "category": "prepositional",
+        "text1": "at the present moment",
+        "text2": "right now",
+        "gold_dir": "EQUIVALENCE",
+        "gold_rev": "EQUIVALENCE",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "EQUIVALENCE_ASYMMETRY",
+        "diagnosis": "Equivalence Asymmetry in Prepositional Chunk: Ground truth relation is symmetric equivalence ('at the present moment' <=> 'right now'), but model predicts asymmetric 'FORWARD_ENTAILMENT' forward and 'FORWARD_ENTAILMENT' backward, violating bidirectional equivalence invariance.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000005",
+        "category": "quantificational",
+        "text1": "nine energetic children",
+        "text2": "several children",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Quantificational Chunk: Monotonicity entailment from specific to general bound correctly identified, but model fails to reverse the quantifier entailment arrow under argument reversal.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000010",
+        "category": "quantificational",
+        "text1": "all registered voters",
+        "text2": "every voter",
+        "gold_dir": "EQUIVALENCE",
+        "gold_rev": "EQUIVALENCE",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "EQUIVALENCE_ASYMMETRY",
+        "diagnosis": "Equivalence Asymmetry in Quantificational Chunk: Ground truth relation is symmetric equivalence ('all registered voters' <=> 'every voter'), but model predicts asymmetric 'FORWARD_ENTAILMENT' forward and 'FORWARD_ENTAILMENT' backward, violating bidirectional equivalence invariance.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000015",
+        "category": "quantificational",
+        "text1": "everyone attended",
+        "text2": "someone attended",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Quantificational Chunk: Monotonicity entailment from specific to general bound correctly identified, but model fails to reverse the quantifier entailment arrow under argument reversal.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000002",
+        "category": "verbal",
+        "text1": "is sprinting across the field",
+        "text2": "is running",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Verbal Chunk: Model detects event subsumption ('is sprinting across the field' -> 'is running'), but high lexical overlap causes spurious forward entailment under reversal ('is running' -> 'is sprinting across the field'), failing to recognize that hyponymic verbs do not reverse.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000007",
+        "category": "verbal",
+        "text1": "to destroy",
+        "text2": "to demolish",
+        "gold_dir": "EQUIVALENCE",
+        "gold_rev": "EQUIVALENCE",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "EQUIVALENCE_ASYMMETRY",
+        "diagnosis": "Equivalence Asymmetry in Verbal Chunk: Ground truth relation is symmetric equivalence ('to destroy' <=> 'to demolish'), but model predicts asymmetric 'FORWARD_ENTAILMENT' forward and 'FORWARD_ENTAILMENT' backward, violating bidirectional equivalence invariance.",
+        "method": "baseline"
+      },
+      {
+        "pair_id": "dico_phrasis_2000012",
+        "category": "verbal",
+        "text1": "are dancing joyfully",
+        "text2": "are moving",
+        "gold_dir": "FORWARD_ENTAILMENT",
+        "gold_rev": "BACKWARD_ENTAILMENT",
+        "pred_dir": "FORWARD_ENTAILMENT",
+        "pred_rev": "FORWARD_ENTAILMENT",
+        "is_soft_consistent": false,
+        "is_hard_correct": false,
+        "error_type": "REVERSAL_CURSE_LOOP",
+        "diagnosis": "Reversal Curse Entailment Loop in Verbal Chunk: Model detects event subsumption ('are dancing joyfully' -> 'are moving'), but high lexical overlap causes spurious forward entailment under reversal ('are moving' -> 'are dancing joyfully'), failing to recognize that hyponymic verbs do not reverse.",
+        "method": "baseline"
+      }
+    ]
+  },
+  "cross_report": {
+    "track": "track1",
+    "methods": [
+      "baseline",
+      "bsa",
+      "crl",
+      "sd",
+      "crl_sd"
+    ],
+    "categories": [
+      "adverbial",
+      "nominal",
+      "prepositional",
+      "quantificational",
+      "verbal"
+    ],
+    "metrics": {
+      "baseline": {
+        "adverbial": {
+          "category": "adverbial",
+          "num_instances": 4,
+          "num_pairs": 2,
+          "num_reversible_pairs": 2,
+          "weighted_f1": 0.0,
+          "soft_cons": 0.0,
+          "hard_cons": 0.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 2,
+          "equiv_asymmetry_rate": 1.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "nominal": {
+          "category": "nominal",
+          "num_instances": 7,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.12698412698412698,
+          "soft_cons": 0.0,
+          "hard_cons": 0.0,
+          "entailment_loop_count": 2,
+          "entailment_loop_rate": 0.6666666666666666,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.3333333333333333,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 1.0
+        },
+        "prepositional": {
+          "category": "prepositional",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.16666666666666666,
+          "soft_cons": 0.0,
+          "hard_cons": 0.0,
+          "entailment_loop_count": 2,
+          "entailment_loop_rate": 0.6666666666666666,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.3333333333333333,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 1.0
+        },
+        "quantificational": {
+          "category": "quantificational",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.16666666666666666,
+          "soft_cons": 0.0,
+          "hard_cons": 0.0,
+          "entailment_loop_count": 2,
+          "entailment_loop_rate": 0.6666666666666666,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.3333333333333333,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 1.0
+        },
+        "verbal": {
+          "category": "verbal",
+          "num_instances": 8,
+          "num_pairs": 4,
+          "num_reversible_pairs": 4,
+          "weighted_f1": 0.20454545454545453,
+          "soft_cons": 0.0,
+          "hard_cons": 0.0,
+          "entailment_loop_count": 3,
+          "entailment_loop_rate": 0.75,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.25,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 1.0
+        }
+      },
+      "bsa": {
+        "adverbial": {
+          "category": "adverbial",
+          "num_instances": 4,
+          "num_pairs": 2,
+          "num_reversible_pairs": 2,
+          "weighted_f1": 0.8571428571428571,
+          "soft_cons": 0.5,
+          "hard_cons": 0.5,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.5,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "nominal": {
+          "category": "nominal",
+          "num_instances": 7,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.6666666666666666,
+          "soft_cons": 0.6666666666666666,
+          "hard_cons": 0.6666666666666666,
+          "entailment_loop_count": 1,
+          "entailment_loop_rate": 0.3333333333333333,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.5
+        },
+        "prepositional": {
+          "category": "prepositional",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.6666666666666666,
+          "soft_cons": 0.3333333333333333,
+          "hard_cons": 0.3333333333333333,
+          "entailment_loop_count": 1,
+          "entailment_loop_rate": 0.3333333333333333,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.3333333333333333,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.5
+        },
+        "quantificational": {
+          "category": "quantificational",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.6666666666666666,
+          "soft_cons": 0.3333333333333333,
+          "hard_cons": 0.3333333333333333,
+          "entailment_loop_count": 1,
+          "entailment_loop_rate": 0.3333333333333333,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.3333333333333333,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.5
+        },
+        "verbal": {
+          "category": "verbal",
+          "num_instances": 8,
+          "num_pairs": 4,
+          "num_reversible_pairs": 4,
+          "weighted_f1": 0.6041666666666666,
+          "soft_cons": 0.25,
+          "hard_cons": 0.25,
+          "entailment_loop_count": 2,
+          "entailment_loop_rate": 0.5,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.25,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.6666666666666666
+        }
+      },
+      "crl": {
+        "adverbial": {
+          "category": "adverbial",
+          "num_instances": 4,
+          "num_pairs": 2,
+          "num_reversible_pairs": 2,
+          "weighted_f1": 0.8571428571428571,
+          "soft_cons": 0.5,
+          "hard_cons": 0.5,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 1,
+          "equiv_asymmetry_rate": 0.5,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "nominal": {
+          "category": "nominal",
+          "num_instances": 7,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 0.8476190476190475,
+          "soft_cons": 0.6666666666666666,
+          "hard_cons": 0.6666666666666666,
+          "entailment_loop_count": 1,
+          "entailment_loop_rate": 0.3333333333333333,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.5
+        },
+        "prepositional": {
+          "category": "prepositional",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "quantificational": {
+          "category": "quantificational",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "verbal": {
+          "category": "verbal",
+          "num_instances": 8,
+          "num_pairs": 4,
+          "num_reversible_pairs": 4,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        }
+      },
+      "sd": {
+        "adverbial": {
+          "category": "adverbial",
+          "num_instances": 4,
+          "num_pairs": 2,
+          "num_reversible_pairs": 2,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "nominal": {
+          "category": "nominal",
+          "num_instances": 7,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "prepositional": {
+          "category": "prepositional",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "quantificational": {
+          "category": "quantificational",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "verbal": {
+          "category": "verbal",
+          "num_instances": 8,
+          "num_pairs": 4,
+          "num_reversible_pairs": 4,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        }
+      },
+      "crl_sd": {
+        "adverbial": {
+          "category": "adverbial",
+          "num_instances": 4,
+          "num_pairs": 2,
+          "num_reversible_pairs": 2,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "nominal": {
+          "category": "nominal",
+          "num_instances": 7,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "prepositional": {
+          "category": "prepositional",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "quantificational": {
+          "category": "quantificational",
+          "num_instances": 6,
+          "num_pairs": 3,
+          "num_reversible_pairs": 3,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        },
+        "verbal": {
+          "category": "verbal",
+          "num_instances": 8,
+          "num_pairs": 4,
+          "num_reversible_pairs": 4,
+          "weighted_f1": 1.0,
+          "soft_cons": 1.0,
+          "hard_cons": 1.0,
+          "entailment_loop_count": 0,
+          "entailment_loop_rate": 0.0,
+          "equiv_asymmetry_count": 0,
+          "equiv_asymmetry_rate": 0.0,
+          "noise_collapse_count": 0,
+          "noise_collapse_rate": 0.0,
+          "reversal_curse_index": 0.0
+        }
+      }
+    },
+    "deltas_vs_baseline": {
+      "baseline": {
+        "adverbial": {
+          "delta_weighted_f1": 0.0,
+          "delta_soft_cons": 0.0,
+          "delta_hard_cons": 0.0,
+          "delta_rcsi": 0.0
+        },
+        "nominal": {
+          "delta_weighted_f1": 0.0,
+          "delta_soft_cons": 0.0,
+          "delta_hard_cons": 0.0,
+          "delta_rcsi": 0.0
+        },
+        "prepositional": {
+          "delta_weighted_f1": 0.0,
+          "delta_soft_cons": 0.0,
+          "delta_hard_cons": 0.0,
+          "delta_rcsi": 0.0
+        },
+        "quantificational": {
+          "delta_weighted_f1": 0.0,
+          "delta_soft_cons": 0.0,
+          "delta_hard_cons": 0.0,
+          "delta_rcsi": 0.0
+        },
+        "verbal": {
+          "delta_weighted_f1": 0.0,
+          "delta_soft_cons": 0.0,
+          "delta_hard_cons": 0.0,
+          "delta_rcsi": 0.0
+        }
+      },
+      "bsa": {
+        "adverbial": {
+          "delta_weighted_f1": 0.8571428571428571,
+          "delta_soft_cons": 0.5,
+          "delta_hard_cons": 0.5,
+          "delta_rcsi": 0.0
+        },
+        "nominal": {
+          "delta_weighted_f1": 0.5396825396825397,
+          "delta_soft_cons": 0.6666666666666666,
+          "delta_hard_cons": 0.6666666666666666,
+          "delta_rcsi": -0.5
+        },
+        "prepositional": {
+          "delta_weighted_f1": 0.5,
+          "delta_soft_cons": 0.3333333333333333,
+          "delta_hard_cons": 0.3333333333333333,
+          "delta_rcsi": -0.5
+        },
+        "quantificational": {
+          "delta_weighted_f1": 0.5,
+          "delta_soft_cons": 0.3333333333333333,
+          "delta_hard_cons": 0.3333333333333333,
+          "delta_rcsi": -0.5
+        },
+        "verbal": {
+          "delta_weighted_f1": 0.3996212121212121,
+          "delta_soft_cons": 0.25,
+          "delta_hard_cons": 0.25,
+          "delta_rcsi": -0.33333333333333337
+        }
+      },
+      "crl": {
+        "adverbial": {
+          "delta_weighted_f1": 0.8571428571428571,
+          "delta_soft_cons": 0.5,
+          "delta_hard_cons": 0.5,
+          "delta_rcsi": 0.0
+        },
+        "nominal": {
+          "delta_weighted_f1": 0.7206349206349205,
+          "delta_soft_cons": 0.6666666666666666,
+          "delta_hard_cons": 0.6666666666666666,
+          "delta_rcsi": -0.5
+        },
+        "prepositional": {
+          "delta_weighted_f1": 0.8333333333333334,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "quantificational": {
+          "delta_weighted_f1": 0.8333333333333334,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "verbal": {
+          "delta_weighted_f1": 0.7954545454545454,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        }
+      },
+      "sd": {
+        "adverbial": {
+          "delta_weighted_f1": 1.0,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": 0.0
+        },
+        "nominal": {
+          "delta_weighted_f1": 0.873015873015873,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "prepositional": {
+          "delta_weighted_f1": 0.8333333333333334,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "quantificational": {
+          "delta_weighted_f1": 0.8333333333333334,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "verbal": {
+          "delta_weighted_f1": 0.7954545454545454,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        }
+      },
+      "crl_sd": {
+        "adverbial": {
+          "delta_weighted_f1": 1.0,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": 0.0
+        },
+        "nominal": {
+          "delta_weighted_f1": 0.873015873015873,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "prepositional": {
+          "delta_weighted_f1": 0.8333333333333334,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "quantificational": {
+          "delta_weighted_f1": 0.8333333333333334,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        },
+        "verbal": {
+          "delta_weighted_f1": 0.7954545454545454,
+          "delta_soft_cons": 1.0,
+          "delta_hard_cons": 1.0,
+          "delta_rcsi": -1.0
+        }
+      }
+    },
+    "most_vulnerable_category_baseline": "nominal",
+    "most_improved_category_sd": "adverbial"
+  }
+}

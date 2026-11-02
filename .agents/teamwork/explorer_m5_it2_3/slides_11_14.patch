@@ -1,0 +1,120 @@
+--- a/presentation/presentation.tex
++++ b/presentation/presentation.tex
+@@ -529,8 +529,9 @@
+     \begin{column}{0.48\textwidth}
+       \begin{block}{\textbf{Baseline Transition Matrix (Track 1)}}
+         \centering
+-        \footnotesize
+-        \vspace{0.1cm}
++        \scriptsize
++        \setlength{\tabcolsep}{2.5pt}
++        \vspace{0.05cm}
+         \begin{tabular}{l|cccc|r}
+           \toprule
+           \textbf{Dir $\downarrow$ / Rev $\rightarrow$} & \textbf{EQU} & \textbf{FWD} & \textbf{BWD} & \textbf{NEG} & \textbf{Total} \\
+@@ -542,8 +542,8 @@
+           \textbf{Total} & 4 & 0 & 6 & 5 & \textbf{15} \\
+           \bottomrule
+         \end{tabular}
+-        \vspace{0.1cm}
+-        \begin{itemize}
++        \vspace{0.05cm}
++        \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+           \item Violation Pairs: \textbf{5} (33.3\%) on reversible test set.
+           \item Frobenius Distance to Ideal $P$: \textbf{1.0000}.
+           \item Frequent asymmetric collapses on adverbials.
+@@ -551,10 +552,11 @@
+     \end{column}
+ 
+     \begin{column}{0.48\textwidth}
+-      \begin{exampleblock}{\textbf{Symmetrized Decoding Matrix (Track 1)}}
++      \begin{exampleblock}{\textbf{Symmetrized Decoding (Track 1)}}
+         \centering
+-        \footnotesize
+-        \vspace{0.1cm}
++        \scriptsize
++        \setlength{\tabcolsep}{2.5pt}
++        \vspace{0.05cm}
+         \begin{tabular}{l|cccc|r}
+           \toprule
+           \textbf{Dir $\downarrow$ / Rev $\rightarrow$} & \textbf{EQU} & \textbf{FWD} & \textbf{BWD} & \textbf{NEG} & \textbf{Total} \\
+@@ -566,8 +568,8 @@
+           \textbf{Total} & 4 & 0 & 6 & 5 & \textbf{15} \\
+           \bottomrule
+         \end{tabular}
+-        \vspace{0.1cm}
+-        \begin{itemize}
++        \vspace{0.05cm}
++        \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+           \item \textbf{SoftCons: 100.0\%} ($15/15$ reciprocal pairs aligned).
+           \item Reversal Curse Severity Index (RCSI): \textbf{0.0\%}.
+           \item Strictly zero off-target transition probabilities.
+@@ -574,9 +576,9 @@
+       \end{exampleblock}
+     \end{column}
+   \end{columns}
+-  \vspace{0.15cm}
++  \vspace{0.03cm}
+   \begin{alertblock}{\textbf{Diagnostic Takeaway}}
+-    \small
++    \scriptsize
+     Symmetrized Decoding eliminates all impossible off-target transitions ($P(\text{FWD} \mid \text{FWD}) = 0$), forcing the transition matrix into strict isomorphism with involution operator $P$.
+   \end{alertblock}
+ \end{frame}
+@@ -671,8 +673,8 @@
+   \begin{columns}[T]
+     \begin{column}{0.50\textwidth}
+       \begin{block}{\textbf{Future Research Horizons}}
+-        \small
+-        \begin{itemize}
++        \scriptsize
++        \begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+           \item \textbf{Cross-Lingual Evaluation:} Extend SD and CRL to Track 3 (Basque, Latxa) and Track 4 (Cross-lingual EN--ES--EU).
+           \item \textbf{Equivariant Transformer Architecture:} Directly embed the involution group $\mathbb{Z}_2$ into multi-head attention layers.
+           \item \textbf{Large Language Model Prompting:} Explore in-context symmetric prompting protocols for generative LLMs (GPT-4o, LLaMA-3).
+@@ -679,8 +681,8 @@
+       \end{block}
+-      \vspace{0.1cm}
++      \vspace{0.05cm}
+       \begin{block}{\textbf{Artifacts \& Code Availability}}
+-        \small
+-        \textbf{Repository:} Complete modular source code, tests, CLI training scripts, and LaTeX deliverables. \\
++        \scriptsize
++        \textbf{Repository:} Complete modular source code, tests, CLI scripts, and LaTeX deliverables. \\
+         \textbf{Author:} Carlos Emiliano Mendoza Hernández \\
+         \textbf{Email:} \texttt{cemh.fi@comunidad.unam.mx} \\
+         \textbf{Institution:} Facultad de Ingeniería, UNAM
+@@ -689,20 +691,20 @@
+     \begin{column}{0.48\textwidth}
+       \begin{block}{\textbf{Key Academic References}}
+         \tiny
+-        \begin{itemize}
+-          \item \textbf{Berglund et al. (2023).} \textit{The Reversal Curse: LLMs trained on 'A is B' fail for 'B is A'}. arXiv:2309.12288.
+-          \item \textbf{SemEval-2027 Task 2 Organizers (2027).} \textit{DiCo-NLI: Evaluating Directional Consistency in Natural Language Inference}. SemEval Workshop.
+-          \item \textbf{He, Gao, \& Chen (2023).} \textit{DeBERTa-v3: Improving DeBERTa using ELECTRA-style pre-training with untied attention}. ICLR.
+-          \item \textbf{Cañete et al. (2020).} \textit{Spanish Pre-Trained BERT Model and Evaluation}. PML4DC @ ICLR.
+-          \item \textbf{Gutiérrez-Fandiño et al. (2022).} \textit{MarIA: Spanish Language Models}. Procesamiento del Lenguaje Natural.
+-          \item \textbf{Manning et al. (2020).} \textit{Emergent Linguistic Structure in Deep Artificial Neural Networks}. PNAS.
+-        \end{itemize}
+-      \end{block}
+-      \vspace{0.2cm}
++        \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
++          \item \textbf{Berglund et al. (2023).} \textit{The Reversal Curse}. arXiv:2309.12288.
++          \item \textbf{SemEval-2027 Task 2 Organizers (2027).} \textit{DiCo-NLI Task Overview}. SemEval.
++          \item \textbf{He, Gao, \& Chen (2023).} \textit{DeBERTa-v3: Untied Attention}. ICLR.
++          \item \textbf{Cañete et al. (2020).} \textit{Spanish Pre-Trained BERT (BETO)}. ICLR.
++          \item \textbf{Gutiérrez-Fandiño et al. (2022).} \textit{MarIA: Spanish Language Models}. SEPLN.
++          \item \textbf{Manning et al. (2020).} \textit{Emergent Linguistic Structure in ANNs}. PNAS.
++        \end{itemize}
++      \end{block}
++      \vspace{0.1cm}
+       \centering
+-      {\Large\textbf{\color{UNAMNavy}Thank you for your attention!}} \\
+-      \vspace{0.1cm}
+-      {\small\textbf{\color{UNAMGold!90!black}Questions \& Discussion}}
++      {\large\textbf{\color{UNAMNavy}Thank you for your attention!}} \\
++      \vspace{0.05cm}
++      {\scriptsize\textbf{\color{UNAMGold!90!black}Questions \& Discussion}}
+     \end{column}
+   \end{columns}
+ \end{frame}

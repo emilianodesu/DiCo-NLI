@@ -1,0 +1,208 @@
+--- a/src/training/trainer.py
++++ b/src/training/trainer.py
+@@ -113,6 +113,56 @@ TrainingArguments = TrainerConfig
+ 
+ 
+ # ==============================================================================
++# Helper for PyTorch AMP GradScaler Compatibility
++# ==============================================================================
++
++class _DummyGradScaler:
++    """Safe fallback GradScaler when PyTorch AMP is unavailable or disabled."""
++
++    def __init__(self, *args: Any, **kwargs: Any) -> None:
++        pass
++
++    def is_enabled(self) -> bool:
++        return False
++
++    def scale(self, loss: Any) -> Any:
++        return loss
++
++    def unscale_(self, optimizer: Any) -> None:
++        pass
++
++    def step(self, optimizer: Any) -> Any:
++        return optimizer.step()
++
++    def update(self) -> None:
++        pass
++
++    def state_dict(self) -> Dict[str, Any]:
++        return {}
++
++    def load_state_dict(self, state_dict: Dict[str, Any]) -> None:
++        pass
++
++
++def _create_grad_scaler(device: Any, enabled: bool = True) -> Any:
++    """
++    Creates a PyTorch GradScaler compatible across PyTorch 1.x, 2.0-2.2, and >= 2.3.
++    Gracefully falls back to _DummyGradScaler if PyTorch/CUDA is unavailable.
++    """
++    if not HAS_TORCH or torch is None:
++        return _DummyGradScaler()
++
++    dev_str = str(device)
++    is_cuda = dev_str.startswith("cuda")
++    scaler_enabled = bool(enabled and is_cuda)
++
++    # 1. Modern PyTorch >= 2.3: torch.amp.GradScaler('cuda', enabled=...)
++    if hasattr(torch, "amp") and hasattr(torch.amp, "GradScaler"):
++        try:
++            return torch.amp.GradScaler("cuda", enabled=scaler_enabled)
++        except (TypeError, ValueError):
++            try:
++                return torch.amp.GradScaler(enabled=scaler_enabled)
++            except Exception:
++                pass
++
++    # 2. PyTorch 1.12 - 2.2: torch.cuda.amp.GradScaler(enabled=...)
++    if hasattr(torch, "cuda") and hasattr(torch.cuda, "amp") and hasattr(torch.cuda.amp, "GradScaler"):
++        try:
++            return torch.cuda.amp.GradScaler(enabled=scaler_enabled)
++        except Exception:
++            pass
++
++    return _DummyGradScaler()
++
++
++# ==============================================================================
+ # 2. Single-Sequence Dataset for Baseline & BSA
+ # ==============================================================================
+ 
+@@ -141,9 +191,18 @@ class CrossEncoderDataset(Dataset):
+     def __getitem__(self, idx: int) -> Dict[str, Any]:
+         r = self.records[idx]
+-        t1 = r.get("text1", "") if isinstance(r, dict) else getattr(r, "text1", "")
+-        t2 = r.get("text2", "") if isinstance(r, dict) else getattr(r, "text2", "")
++        raw_t1 = r.get("text1") if isinstance(r, dict) else getattr(r, "text1", None)
++        raw_t2 = r.get("text2") if isinstance(r, dict) else getattr(r, "text2", None)
++
++        def _clean_str(val: Any) -> str:
++            if val is None:
++                return ""
++            if isinstance(val, float) and math.isnan(val):
++                return ""
++            return str(val)
++
++        t1 = _clean_str(raw_t1)
++        t2 = _clean_str(raw_t2)
+         lbl = r.get("label") if isinstance(r, dict) else getattr(r, "label", None)
+         lbl_id = LABEL_TO_ID.get(lbl, -100) if lbl else -100
+-        iid = str(r.get("instance_id", str(idx)) if isinstance(r, dict) else getattr(r, "instance_id", str(idx)))
++        raw_iid = r.get("instance_id") if isinstance(r, dict) else getattr(r, "instance_id", None)
++        iid = str(idx) if (raw_iid is None or (isinstance(raw_iid, float) and math.isnan(raw_iid))) else str(raw_iid)
+ 
+         item: Dict[str, Any] = {
+@@ -248,7 +307,13 @@ class Trainer:
+     def _prepare_dataset(self, data: Any, is_paired: bool) -> Any:
+-        """Adapts raw records or DataFrame into appropriate Dataset."""
++        """Adapts raw records, DataFrame, or existing Dataset into appropriate Dataset."""
+         if data is None:
+             return None
++        if isinstance(data, PairedReversalDataset) or (
++            HAS_TORCH and isinstance(data, Dataset) and not isinstance(data, (list, tuple))
++        ):
++            return data
++
+         if hasattr(data, "to_dict") and callable(getattr(data, "to_dict")):
+             records = data.to_dict("records")
+         elif isinstance(data, (list, tuple)):
+@@ -258,3 +323,6 @@ class Trainer:
+         if is_paired:
+-            pairs = pair_instances(records)
++            if records and isinstance(records[0], ReciprocalPair):
++                pairs = records
++            else:
++                pairs = pair_instances(records)
+             return PairedReversalDataset(
+@@ -360,4 +428,8 @@ class Trainer:
++        target_model = getattr(self.model, "base_model", self.model)
+         # Optimizer with differential weight decay
+         no_decay = ["bias", "LayerNorm.weight", "layer_norm.weight", "RMSNorm.weight"]
+-        named_params = list(self.model.named_parameters()) if hasattr(self.model, "named_parameters") else []
++        named_params = list(target_model.named_parameters()) if hasattr(target_model, "named_parameters") else (
++            list(self.model.named_parameters()) if hasattr(self.model, "named_parameters") else []
++        )
+         if named_params:
+@@ -374,3 +446,6 @@ class Trainer:
+         else:
+-            optimizer_grouped_parameters = self.model.parameters() if hasattr(self.model, "parameters") else []
++            optimizer_grouped_parameters = (
++                target_model.parameters() if hasattr(target_model, "parameters")
++                else (self.model.parameters() if hasattr(self.model, "parameters") else [])
++            )
+ 
+@@ -401,1 +476,1 @@ class Trainer:
+-        scaler = torch.amp.GradScaler("cuda", enabled=(self.config.fp16 and str(self.device).startswith("cuda")))
++        scaler = _create_grad_scaler(device=self.device, enabled=self.config.fp16)
+@@ -439,3 +514,4 @@ class Trainer:
+                         scaler.unscale_(optimizer)
+-                        if hasattr(self.model, "parameters"):
+-                            torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.config.max_grad_norm)
++                        clip_target = self.model if hasattr(self.model, "parameters") else target_model
++                        if hasattr(clip_target, "parameters"):
++                            torch.nn.utils.clip_grad_norm_(clip_target.parameters(), self.config.max_grad_norm)
+@@ -448,3 +524,4 @@ class Trainer:
+                     if (batch_idx + 1) % self.config.gradient_accumulation_steps == 0:
+-                        if hasattr(self.model, "parameters"):
+-                            torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.config.max_grad_norm)
++                        clip_target = self.model if hasattr(self.model, "parameters") else target_model
++                        if hasattr(clip_target, "parameters"):
++                            torch.nn.utils.clip_grad_norm_(clip_target.parameters(), self.config.max_grad_norm)
+@@ -494,22 +570,0 @@ class Trainer:
+-    def evaluate(self, eval_dataset: Optional[Any] = None) -> Dict[str, float]:
+-        """Evaluates model against official metrics (Weighted F1, SoftCons, HardCons)."""
+-        data = eval_dataset if eval_dataset is not None else self.eval_dataset_raw
+-        if data is None:
+-            return {}
+-
+-        records = (
+-            data.to_dict("records")
+-            if hasattr(data, "to_dict") and callable(getattr(data, "to_dict"))
+-            else list(data)
+-        )
+-        pairs = pair_instances(records)
+-
+-        y_true_dir: List[str] = []
+-        y_pred_dir: List[str] = []
+-        y_true_rev: List[str] = []
+-        y_pred_rev: List[str] = []
+-        is_rev_mask: List[bool] = []
+-
+-        if hasattr(self.model, "eval"):
+-            self.model.eval()
+-
+@@ -550,3 +603,6 @@ class Trainer:
+-        pairs = pair_instances(records)
++        if records and isinstance(records[0], ReciprocalPair):
++            pairs = records
++        else:
++            pairs = pair_instances(records)
+ 
+@@ -566,4 +622,4 @@ class Trainer:
+-            t1 = fwd.get("text1", "") if isinstance(fwd, dict) else getattr(fwd, "text1", "")
+-            t2 = fwd.get("text2", "") if isinstance(fwd, dict) else getattr(fwd, "text2", "")
++            t1 = str(fwd.get("text1") or "") if isinstance(fwd, dict) else str(getattr(fwd, "text1", "") or "")
++            t2 = str(fwd.get("text2") or "") if isinstance(fwd, dict) else str(getattr(fwd, "text2", "") or "")
+@@ -611,4 +667,4 @@ class Trainer:
+-            t1 = fwd.get("text1", "") if isinstance(fwd, dict) else getattr(fwd, "text1", "")
+-            t2 = fwd.get("text2", "") if isinstance(fwd, dict) else getattr(fwd, "text2", "")
+-            id_fwd = str(fwd.get("instance_id") if isinstance(fwd, dict) else getattr(fwd, "instance_id"))
+-            id_rev = str(rev.get("instance_id") if isinstance(rev, dict) else getattr(rev, "instance_id"))
++            t1 = str(fwd.get("text1") or "") if isinstance(fwd, dict) else str(getattr(fwd, "text1", "") or "")
++            t2 = str(fwd.get("text2") or "") if isinstance(fwd, dict) else str(getattr(fwd, "text2", "") or "")
++            id_fwd = str(fwd.get("instance_id") if isinstance(fwd, dict) else getattr(fwd, "instance_id", ""))
++            id_rev = str(rev.get("instance_id") if isinstance(rev, dict) else getattr(rev, "instance_id", ""))
+@@ -627,7 +683,7 @@ class Trainer:
+-            iid = str(r.get("instance_id") if isinstance(r, dict) else getattr(r, "instance_id"))
++            iid = str(r.get("instance_id") if isinstance(r, dict) else getattr(r, "instance_id", ""))
+             all_ids.append(iid)
+             if iid in paired_dict:
+                 all_preds.append(paired_dict[iid])
+             else:
+-                t1 = r.get("text1", "") if isinstance(r, dict) else getattr(r, "text1", "")
+-                t2 = r.get("text2", "") if isinstance(r, dict) else getattr(r, "text2", "")
++                t1 = str(r.get("text1") or "") if isinstance(r, dict) else str(getattr(r, "text1", "") or "")
++                t2 = str(r.get("text2") or "") if isinstance(r, dict) else str(getattr(r, "text2", "") or "")

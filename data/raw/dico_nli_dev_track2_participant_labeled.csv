@@ -1,0 +1,32 @@
+instance_id,pair_id,text1_lang,text2_lang,text1,text2,label
+dico_phrasis_2000001__es-es__original,dico_phrasis_2000001,es,es,el papa Francisco,el papa,FORWARD_ENTAILMENT
+dico_phrasis_2000001__es-es__flipped,dico_phrasis_2000001,es,es,el papa,el papa Francisco,BACKWARD_ENTAILMENT
+dico_phrasis_2000002__es-es__original,dico_phrasis_2000002,es,es,está corriendo a toda prisa,se está desplazando,FORWARD_ENTAILMENT
+dico_phrasis_2000002__es-es__flipped,dico_phrasis_2000002,es,es,se está desplazando,está corriendo a toda prisa,BACKWARD_ENTAILMENT
+dico_phrasis_2000003__es-es__original,dico_phrasis_2000003,es,es,en el centro de Madrid,en España,FORWARD_ENTAILMENT
+dico_phrasis_2000003__es-es__flipped,dico_phrasis_2000003,es,es,en España,en el centro de Madrid,BACKWARD_ENTAILMENT
+dico_phrasis_2000004__es-es__original,dico_phrasis_2000004,es,es,extremadamente rápido,muy velozmente,EQUIVALENCE
+dico_phrasis_2000004__es-es__flipped,dico_phrasis_2000004,es,es,muy velozmente,extremadamente rápido,EQUIVALENCE
+dico_phrasis_2000005__es-es__original,dico_phrasis_2000005,es,es,nueve niños entusiastas,varios niños,FORWARD_ENTAILMENT
+dico_phrasis_2000005__es-es__flipped,dico_phrasis_2000005,es,es,varios niños,nueve niños entusiastas,BACKWARD_ENTAILMENT
+dico_phrasis_2000006__es-es__original,dico_phrasis_2000006,es,es,el presidente del gobierno,el mandatario,EQUIVALENCE
+dico_phrasis_2000006__es-es__flipped,dico_phrasis_2000006,es,es,el mandatario,el presidente del gobierno,EQUIVALENCE
+dico_phrasis_2000007__es-es__original,dico_phrasis_2000007,es,es,destruir por completo,demoler,EQUIVALENCE
+dico_phrasis_2000007__es-es__flipped,dico_phrasis_2000007,es,es,demoler,destruir por completo,EQUIVALENCE
+dico_phrasis_2000008__es-es__original,dico_phrasis_2000008,es,es,con una raqueta de tenis,con equipo deportivo,FORWARD_ENTAILMENT
+dico_phrasis_2000008__es-es__flipped,dico_phrasis_2000008,es,es,con equipo deportivo,con una raqueta de tenis,BACKWARD_ENTAILMENT
+dico_phrasis_2000009__es-es__original,dico_phrasis_2000009,es,es,con sumo cuidado,cuidadosamente,EQUIVALENCE
+dico_phrasis_2000009__es-es__flipped,dico_phrasis_2000009,es,es,cuidadosamente,con sumo cuidado,EQUIVALENCE
+dico_phrasis_2000010__es-es__original,dico_phrasis_2000010,es,es,todos los votantes censados,cada votante,EQUIVALENCE
+dico_phrasis_2000010__es-es__flipped,dico_phrasis_2000010,es,es,cada votante,todos los votantes censados,EQUIVALENCE
+dico_phrasis_2000011__es-es__original,dico_phrasis_2000011,es,es,un niño pequeño,un menor de edad,FORWARD_ENTAILMENT
+dico_phrasis_2000011__es-es__flipped,dico_phrasis_2000011,es,es,un menor de edad,un niño pequeño,BACKWARD_ENTAILMENT
+dico_phrasis_2000012__es-es__original,dico_phrasis_2000012,es,es,están bailando con alegría,se están moviendo,FORWARD_ENTAILMENT
+dico_phrasis_2000012__es-es__flipped,dico_phrasis_2000012,es,es,se están moviendo,están bailando con alegría,BACKWARD_ENTAILMENT
+dico_phrasis_2000013__es-es__original,dico_phrasis_2000013,es,es,en este preciso instante,ahora mismo,EQUIVALENCE
+dico_phrasis_2000013__es-es__flipped,dico_phrasis_2000013,es,es,ahora mismo,en este preciso instante,EQUIVALENCE
+dico_phrasis_2000014__es-es__original,dico_phrasis_2000014,es,es,caminando muy despacio,caminando despacio,FORWARD_ENTAILMENT
+dico_phrasis_2000014__es-es__flipped,dico_phrasis_2000014,es,es,caminando despacio,caminando muy despacio,BACKWARD_ENTAILMENT
+dico_phrasis_2000015__es-es__original,dico_phrasis_2000015,es,es,todos asistieron,alguien asistió,FORWARD_ENTAILMENT
+dico_phrasis_2000015__es-es__flipped,dico_phrasis_2000015,es,es,alguien asistió,todos asistieron,BACKWARD_ENTAILMENT
+dico_phrasis_2000016__es-es__original,dico_phrasis_2000016,es,es,un tigre salvaje,un felino doméstico,NEGATIVE_OTHER

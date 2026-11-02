@@ -1,0 +1,32 @@
+instance_id,pair_id,text1_lang,text2_lang,text1,text2,label
+dico_phrasis_2000001__en-en__original,dico_phrasis_2000001,en,en,Pope Francis,pope,FORWARD_ENTAILMENT
+dico_phrasis_2000001__en-en__flipped,dico_phrasis_2000001,en,en,pope,Pope Francis,BACKWARD_ENTAILMENT
+dico_phrasis_2000002__en-en__original,dico_phrasis_2000002,en,en,is sprinting across the field,is running,FORWARD_ENTAILMENT
+dico_phrasis_2000002__en-en__flipped,dico_phrasis_2000002,en,en,is running,is sprinting across the field,BACKWARD_ENTAILMENT
+dico_phrasis_2000003__en-en__original,dico_phrasis_2000003,en,en,in the center of Madrid,in Spain,FORWARD_ENTAILMENT
+dico_phrasis_2000003__en-en__flipped,dico_phrasis_2000003,en,en,in Spain,in the center of Madrid,BACKWARD_ENTAILMENT
+dico_phrasis_2000004__en-en__original,dico_phrasis_2000004,en,en,extremely rapidly,very fast,EQUIVALENCE
+dico_phrasis_2000004__en-en__flipped,dico_phrasis_2000004,en,en,very fast,extremely rapidly,EQUIVALENCE
+dico_phrasis_2000005__en-en__original,dico_phrasis_2000005,en,en,nine energetic children,several children,FORWARD_ENTAILMENT
+dico_phrasis_2000005__en-en__flipped,dico_phrasis_2000005,en,en,several children,nine energetic children,BACKWARD_ENTAILMENT
+dico_phrasis_2000006__en-en__original,dico_phrasis_2000006,en,en,the prime minister,the head of government,EQUIVALENCE
+dico_phrasis_2000006__en-en__flipped,dico_phrasis_2000006,en,en,the head of government,the prime minister,EQUIVALENCE
+dico_phrasis_2000007__en-en__original,dico_phrasis_2000007,en,en,to destroy,to demolish,EQUIVALENCE
+dico_phrasis_2000007__en-en__flipped,dico_phrasis_2000007,en,en,to demolish,to destroy,EQUIVALENCE
+dico_phrasis_2000008__en-en__original,dico_phrasis_2000008,en,en,with a tennis racket,with sports equipment,FORWARD_ENTAILMENT
+dico_phrasis_2000008__en-en__flipped,dico_phrasis_2000008,en,en,with sports equipment,with a tennis racket,BACKWARD_ENTAILMENT
+dico_phrasis_2000009__en-en__original,dico_phrasis_2000009,en,en,with great care,carefully,EQUIVALENCE
+dico_phrasis_2000009__en-en__flipped,dico_phrasis_2000009,en,en,carefully,with great care,EQUIVALENCE
+dico_phrasis_2000010__en-en__original,dico_phrasis_2000010,en,en,all registered voters,every voter,EQUIVALENCE
+dico_phrasis_2000010__en-en__flipped,dico_phrasis_2000010,en,en,every voter,all registered voters,EQUIVALENCE
+dico_phrasis_2000011__en-en__original,dico_phrasis_2000011,en,en,a young boy,a child,FORWARD_ENTAILMENT
+dico_phrasis_2000011__en-en__flipped,dico_phrasis_2000011,en,en,a child,a young boy,BACKWARD_ENTAILMENT
+dico_phrasis_2000012__en-en__original,dico_phrasis_2000012,en,en,are dancing joyfully,are moving,FORWARD_ENTAILMENT
+dico_phrasis_2000012__en-en__flipped,dico_phrasis_2000012,en,en,are moving,are dancing joyfully,BACKWARD_ENTAILMENT
+dico_phrasis_2000013__en-en__original,dico_phrasis_2000013,en,en,at the present moment,right now,EQUIVALENCE
+dico_phrasis_2000013__en-en__flipped,dico_phrasis_2000013,en,en,right now,at the present moment,EQUIVALENCE
+dico_phrasis_2000014__en-en__original,dico_phrasis_2000014,en,en,walking quite slowly,walking slowly,FORWARD_ENTAILMENT
+dico_phrasis_2000014__en-en__flipped,dico_phrasis_2000014,en,en,walking slowly,walking quite slowly,BACKWARD_ENTAILMENT
+dico_phrasis_2000015__en-en__original,dico_phrasis_2000015,en,en,everyone attended,someone attended,FORWARD_ENTAILMENT
+dico_phrasis_2000015__en-en__flipped,dico_phrasis_2000015,en,en,someone attended,everyone attended,BACKWARD_ENTAILMENT
+dico_phrasis_2000016__en-en__original,dico_phrasis_2000016,en,en,a wild tiger,a domestic feline,NEGATIVE_OTHER

@@ -1,0 +1,132 @@
+--- a/src/models/factory.py
++++ b/src/models/factory.py
+@@ -124,6 +124,18 @@
+     def train(self, mode: bool = True) -> MockTransformerModel:
+         self.training = mode
+         return self
++
++    def parameters(self, *args: Any, **kwargs: Any) -> Any:
++        return iter([])
++
++    def named_parameters(self, *args: Any, **kwargs: Any) -> Any:
++        return iter([])
++
++    def state_dict(self, *args: Any, **kwargs: Any) -> Dict[str, Any]:
++        return {}
++
++    def load_state_dict(self, state_dict: Any, *args: Any, **kwargs: Any) -> Any:
++        return None
+ 
+     def predict_logits(self, text1: str, text2: str) -> List[float]:
+         """Calibrated 4-class logits based on phrase heuristics:
+@@ -199,6 +211,13 @@
+         self.mask_negative_other = mask_negative_other
+         self.decoder = SymmetrizedDecoder(mask_negative_other=mask_negative_other)
+ 
++    def __getattr__(self, name: str) -> Any:
++        """Forward attribute lookup to base model for PyTorch & HF interoperability."""
++        try:
++            base = self.__dict__["base_model"]
++        except KeyError:
++            raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
++        return getattr(base, name)
++
+     def __call__(self, *args: Any, **kwargs: Any) -> Any:
+         return self.base_model(*args, **kwargs)
+ 
+@@ -293,17 +312,69 @@
+     def decode_pairs(
+         self,
+         probs_dir: Any,
+         probs_rev: Any,
+         mask_negative_other: Optional[bool] = None,
+     ) -> Tuple[Any, Any]:
+         return self.decoder.decode_pairs(probs_dir, probs_rev, mask_negative_other=mask_negative_other)
+ 
+-    def to(self, device: Any):
++    def parameters(self, *args: Any, **kwargs: Any) -> Any:
++        """Delegate parameter iterator to base model."""
++        if hasattr(self.base_model, "parameters"):
++            try:
++                return self.base_model.parameters(*args, **kwargs)
++            except TypeError:
++                return self.base_model.parameters()
++        return iter([])
++
++    def named_parameters(self, *args: Any, **kwargs: Any) -> Any:
++        """Delegate named parameter iterator to base model."""
++        if hasattr(self.base_model, "named_parameters"):
++            try:
++                return self.base_model.named_parameters(*args, **kwargs)
++            except TypeError:
++                return self.base_model.named_parameters()
++        return iter([])
++
++    def state_dict(self, *args: Any, **kwargs: Any) -> Dict[str, Any]:
++        """Delegate state dictionary retrieval to base model."""
++        if hasattr(self.base_model, "state_dict"):
++            return self.base_model.state_dict(*args, **kwargs)
++        return {}
++
++    def load_state_dict(self, state_dict: Any, *args: Any, **kwargs: Any) -> Any:
++        """Delegate state dictionary loading to base model."""
++        if hasattr(self.base_model, "load_state_dict"):
++            return self.base_model.load_state_dict(state_dict, *args, **kwargs)
++        return None
++
++    def named_buffers(self, *args: Any, **kwargs: Any) -> Any:
++        """Delegate named buffer iterator to base model."""
++        if hasattr(self.base_model, "named_buffers"):
++            try:
++                return self.base_model.named_buffers(*args, **kwargs)
++            except TypeError:
++                return self.base_model.named_buffers()
++        return iter([])
++
++    def buffers(self, *args: Any, **kwargs: Any) -> Any:
++        """Delegate buffer iterator to base model."""
++        if hasattr(self.base_model, "buffers"):
++            try:
++                return self.base_model.buffers(*args, **kwargs)
++            except TypeError:
++                return self.base_model.buffers()
++        return iter([])
++
++    def zero_grad(self, *args: Any, **kwargs: Any) -> Any:
++        """Delegate gradient zeroing to base model."""
++        if hasattr(self.base_model, "zero_grad"):
++            return self.base_model.zero_grad(*args, **kwargs)
++        return None
++
++    def save_pretrained(self, save_directory: str, *args: Any, **kwargs: Any) -> Any:
++        """Delegate save_pretrained to base model."""
++        if hasattr(self.base_model, "save_pretrained"):
++            return self.base_model.save_pretrained(save_directory, *args, **kwargs)
++        return None
++
++    def to(self, *args: Any, **kwargs: Any) -> SymmetrizedModelWrapper:
++        """Forward device or dtype transfer to base model and return self."""
+         if hasattr(self.base_model, "to"):
+-            self.base_model.to(device)
++            try:
++                self.base_model.to(*args, **kwargs)
++            except TypeError:
++                if args:
++                    self.base_model.to(args[0])
++                elif "device" in kwargs:
++                    self.base_model.to(kwargs["device"])
+         return self
+ 
+-    def eval(self):
++    def eval(self) -> SymmetrizedModelWrapper:
++        """Set base model to evaluation mode, returning self."""
+         if hasattr(self.base_model, "eval"):
+             self.base_model.eval()
+         return self
+ 
+-    def train(self, mode: bool = True):
++    def train(self, mode: bool = True) -> SymmetrizedModelWrapper:
++        """Set base model training mode, returning self."""
+         if hasattr(self.base_model, "train"):
+             self.base_model.train(mode)
+         return self

@@ -1,0 +1,70 @@
+--- a/tests/test_models.py
++++ b/tests/test_models.py
+@@ -479,6 +479,63 @@
+         pred_label = model_crl_sd.predict("the red car", "a vehicle")
+         self.assertIn(pred_label, ID_TO_LABEL.values())
+ 
++    def test_symmetrized_model_wrapper_parameter_and_state_delegation(self):
++        """Verify SymmetrizedModelWrapper delegates PyTorch module methods (parameters, state_dict, to)."""
++        class MockTrainableModule:
++            def __init__(self):
++                self.device = "cpu"
++                self.training = True
++                self.zeroed = False
++            def parameters(self, recurse: bool = True):
++                return ["param_w", "param_b"]
++            def named_parameters(self, prefix: str = "", recurse: bool = True):
++                return [("weight", "param_w"), ("bias", "param_b")]
++            def state_dict(self, *args, **kwargs):
++                return {"weight": [1.0, 2.0], "bias": [0.0]}
++            def load_state_dict(self, state_dict, strict: bool = True):
++                return "loaded_successfully"
++            def to(self, *args, **kwargs):
++                self.device = args[0] if args else kwargs.get("device", "cpu")
++                return self
++            def eval(self):
++                self.training = False
++                return self
++            def train(self, mode: bool = True):
++                self.training = mode
++                return self
++            def zero_grad(self):
++                self.zeroed = True
++
++        base = MockTrainableModule()
++        wrapped = SymmetrizedModelWrapper(base)
++
++        # 1. Parameter delegation
++        self.assertTrue(hasattr(wrapped, "parameters"))
++        self.assertEqual(list(wrapped.parameters()), ["param_w", "param_b"])
++        self.assertEqual(list(wrapped.parameters(recurse=False)), ["param_w", "param_b"])
++
++        # 2. Named parameter delegation
++        self.assertTrue(hasattr(wrapped, "named_parameters"))
++        self.assertEqual(list(wrapped.named_parameters()), [("weight", "param_w"), ("bias", "param_b")])
++
++        # 3. State dict delegation
++        self.assertTrue(hasattr(wrapped, "state_dict"))
++        self.assertEqual(wrapped.state_dict(), {"weight": [1.0, 2.0], "bias": [0.0]})
++
++        # 4. Load state dict delegation
++        self.assertTrue(hasattr(wrapped, "load_state_dict"))
++        self.assertEqual(wrapped.load_state_dict({"weight": [1.0]}), "loaded_successfully")
++
++        # 5. Device transfer delegation
++        self.assertIs(wrapped.to("cuda:0"), wrapped)
++        self.assertEqual(base.device, "cuda:0")
++
++        # 6. Reviewer test contract (zero-argument methods)
++        class ReviewerMock:
++            def parameters(self): return [1]
++            def named_parameters(self): return [('w', 1)]
++            def state_dict(self): return {'w': 1}
++
++        r_wrapped = SymmetrizedModelWrapper(ReviewerMock())
++        self.assertTrue(hasattr(r_wrapped, 'parameters') and len(list(r_wrapped.parameters())) == 1)
++        self.assertTrue(hasattr(r_wrapped, 'named_parameters') and len(list(r_wrapped.named_parameters())) == 1)
++        self.assertTrue(hasattr(r_wrapped, 'state_dict') and r_wrapped.state_dict() == {'w': 1})
++
+     def test_symmetrized_decoder_mask_negative_other_configurability(self):
+         """Verify mask_negative_other is configurable via __init__, attribute, and per-call override."""

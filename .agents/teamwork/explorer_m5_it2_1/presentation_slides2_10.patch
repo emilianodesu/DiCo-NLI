@@ -1,0 +1,163 @@
+--- /Users/emilianodesu/Documents/LCD/7Sem/PLN/FinalProject/presentation/presentation.tex	2026-11-02 01:35:59
++++ draft_presentation.tex	2026-11-02 01:53:31
+@@ -110,61 +110,56 @@
+ \begin{frame}{\textbf{Presentation Outline}}{\textbf{Structured Rubric: 6 Core Academic Sections}}
+   \begin{columns}[T]
+     \begin{column}{0.48\textwidth}
+-      \begin{block}{\textbf{I. Problem \& Motivation}}
+-        \small
+-        \begin{itemize}
+-          \item The Reversal Curse in Transformer architectures.
+-          \item Why standard cross-encoders fail on inverse pairs.
+-          \item Pathological failure modes in directional NLI.
+-        \end{itemize}
+-      \end{block}
+-      \vspace{0.15cm}
+-      \begin{block}{\textbf{II. Corpus \& Task Definition}}
+-        \small
+-        \begin{itemize}
+-          \item SemEval-2027 Task 2: DiCo-NLI \& PhrasIS suite.
+-          \item 4 relational classes \& deterministic reversal algebra.
+-          \item Official metrics: Weighted F$_1$, SoftCons, HardCons.
+-        \end{itemize}
+-      \end{block}
+-      \vspace{0.15cm}
+-      \begin{block}{\textbf{III. Methodology \& Formulations}}
+-        \small
+-        \begin{itemize}
+-          \item Baseline Cross-Encoder vs. BSA Augmentation.
+-          \item Siamese Consistency Regularization Loss (CRL).
+-          \item Permutation involution operator $P \in \mathbb{R}^{4 \times 4}$.
+-        \end{itemize}
+-      \end{block}
++      \begin{enumerate}[\bfseries\color{UNAMNavy} I.]
++        \setlength{\itemsep}{6pt}
++        \item \textbf{\color{UNAMNavy}Problem \& Motivation}
++          \begin{itemize}\footnotesize\setlength{\itemsep}{1pt}
++            \item The Reversal Curse in Transformer architectures.
++            \item Why standard cross-encoders fail on inverse pairs.
++            \item Pathological failure modes in directional NLI.
++          \end{itemize}
++
++        \item \textbf{\color{UNAMNavy}Corpus \& Task Definition}
++          \begin{itemize}\footnotesize\setlength{\itemsep}{1pt}
++            \item SemEval-2027 Task 2: DiCo-NLI \& PhrasIS suite.
++            \item 4 relational classes \& deterministic reversal algebra.
++            \item Official metrics: Weighted F$_1$, SoftCons, HardCons.
++          \end{itemize}
++
++        \item \textbf{\color{UNAMNavy}Methodology \& Formulations}
++          \begin{itemize}\footnotesize\setlength{\itemsep}{1pt}
++            \item Baseline Cross-Encoder vs. BSA Augmentation.
++            \item Siamese Consistency Regularization Loss (CRL).
++            \item Permutation involution operator $P \in \mathbb{R}^{4 \times 4}$.
++          \end{itemize}
++      \end{enumerate}
+     \end{column}
+ 
+     \begin{column}{0.48\textwidth}
+-      \begin{block}{\textbf{IV. Symmetrized Decoding (SD) Proof}}
+-        \small
+-        \begin{itemize}
+-          \item Post-hoc equivariant projection in probability space.
+-          \item Mathematical proof guaranteeing $\text{SoftCons} \equiv 100\%$.
+-          \item Deterministic involutory tie-breaking rule.
+-        \end{itemize}
+-      \end{block}
+-      \vspace{0.15cm}
+-      \begin{block}{\textbf{V. Empirical Results \& Analysis}}
+-        \small
+-        \begin{itemize}
+-          \item Benchmark comparison: 5 methods on Tracks 1 \& 2.
+-          \item $4 \times 4$ Directional Transition Matrices \& RCSI.
+-          \item Syntactic chunk breakdown (Nominal, Verbal, etc.).
+-        \end{itemize}
+-      \end{block}
+-      \vspace{0.15cm}
+-      \begin{block}{\textbf{VI. Conclusions \& Takeaways}}
+-        \small
+-        \begin{itemize}
+-          \item Overcoming the Reversal Curse without retraining.
+-          \item Practical guidelines for DiCo-NLI submissions.
+-          \item Future directions in equivariant reasoning.
+-        \end{itemize}
+-      \end{block}
++      \begin{enumerate}[\bfseries\color{UNAMNavy} I.]
++        \setcounter{enumi}{3}
++        \setlength{\itemsep}{6pt}
++        \item \textbf{\color{UNAMNavy}Symmetrized Decoding (SD) Proof}
++          \begin{itemize}\footnotesize\setlength{\itemsep}{1pt}
++            \item Post-hoc equivariant projection in probability space.
++            \item Mathematical proof guaranteeing $\text{SoftCons} \equiv 100\%$.
++            \item Deterministic involutory tie-breaking rule.
++          \end{itemize}
++
++        \item \textbf{\color{UNAMNavy}Empirical Results \& Analysis}
++          \begin{itemize}\footnotesize\setlength{\itemsep}{1pt}
++            \item Benchmark comparison: 5 methods on Tracks 1 \& 2.
++            \item $4 \times 4$ Directional Transition Matrices \& RCSI.
++            \item Syntactic chunk breakdown (Nominal, Verbal, etc.).
++          \end{itemize}
++
++        \item \textbf{\color{UNAMNavy}Conclusions \& Takeaways}
++          \begin{itemize}\footnotesize\setlength{\itemsep}{1pt}
++            \item Overcoming the Reversal Curse without retraining.
++            \item Practical guidelines for DiCo-NLI submissions.
++            \item Future directions in equivariant reasoning.
++          \end{itemize}
++      \end{enumerate}
+     \end{column}
+   \end{columns}
+ \end{frame}
+@@ -472,10 +467,9 @@
+ % SLIDE 10: Experimental Results
+ % -----------------------------------------------------------------------------
+ \begin{frame}{\textbf{Experimental Results}}{\textbf{Cross-Method Evaluation Benchmark on PhrasIS Dev Split}}
+-  \small
+-  \begin{table}[h]
+-    \centering
+-    \small
++  \centering
++  \setlength{\tabcolsep}{3.5pt}
++  \resizebox{0.98\textwidth}{!}{%
+     \begin{tabular}{ll ccc ccc}
+       \toprule
+       & & \multicolumn{3}{c}{\textbf{Track 1: English (DeBERTa-v3)}} & \multicolumn{3}{c}{\textbf{Track 2: Spanish (BETO)}} \\
+@@ -493,25 +487,28 @@
+       \multicolumn{2}{l}{\textbf{Absolute Improvement ($\Delta$)}} & \textbf{+0.2333} & \textbf{+0.3333} & \textbf{+0.2667} & \textbf{+0.1449} & \textbf{+0.2667} & \textbf{+0.1333} \\
+       \multicolumn{2}{l}{\textbf{Relative Gain (\%)}} & \textbf{+74.0\%} & \textbf{+50.0\%} & \textbf{+100.0\%} & \textbf{+51.8\%} & \textbf{+36.4\%} & \textbf{+50.0\%} \\
+       \bottomrule
+-    \end{tabular}
+-    \caption{Official SemEval-2027 Task 2 benchmark metrics across 5 modeling strategies.}
+-  \end{table}
++    \end{tabular}%
++  }
+ 
++  \vspace{0.1cm}
++  {\scriptsize\color{AccentSlate}Official SemEval-2027 Task 2 benchmark metrics across 5 modeling strategies.}
++
++  \vspace{0.15cm}
+   \begin{columns}[T]
+     \begin{column}{0.48\textwidth}
+       \begin{block}{\textbf{Key Empirical Findings (Track 1)}}
+-        \footnotesize
+-        \begin{itemize}
+-          \item Weighted F$_1$ surges from \textbf{0.3151 $\to$ 0.5484} (+74.0\% relative).
+-          \item HardCons doubles from \textbf{0.2667 $\to$ 0.5333} (+100\% relative).
++        \scriptsize
++        \begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
++          \item Weighted F$_1$ surges from \textbf{0.3151 $\to$ 0.5484} (+74.0\% rel).
++          \item HardCons doubles from \textbf{0.2667 $\to$ 0.5333} (+100\% rel).
+           \item SoftCons achieves exactly \textbf{100.0\%} (perfect consistency).
+         \end{itemize}
+       \end{block}
+     \end{column}
+     \begin{column}{0.48\textwidth}
+       \begin{block}{\textbf{Cross-Lingual Robustness (Track 2)}}
+-        \footnotesize
+-        \begin{itemize}
++        \scriptsize
++        \begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+           \item BETO in Spanish mirrors English performance leaps.
+           \item SoftCons improves from \textbf{0.7333 $\to$ 1.0000} (+26.67\% abs).
+           \item Proves method's universality across diverse language typologies.
