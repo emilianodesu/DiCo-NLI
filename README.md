@@ -13,7 +13,7 @@ Official research repository and codebase for **SemEval-2027 Task 2: DiCo-NLI** 
 This project delivers:
 - **Track 1 (English)** and **Track 2 (Spanish)** pipelines with DeBERTa-v3 and BETO backbones.
 - **Three core mitigation families**: Bi-directional Symmetrical Augmentation (BSA), Consistency Regularization Loss (CRL), and Symmetrized Decoding (SD).
-- **Mathematical proof & empirical demonstration** that Symmetrized Decoding guarantees $\text{SoftCons} \equiv 1.0000$ ($100\%$).
+- **Mathematical proof & empirical demonstration** that Symmetrized Decoding guarantees $\text{SoftCons} \equiv 1.0000$ (100%).
 - **Production GPU launcher** (`scripts/run_gpu_training.sh`) for automated remote execution with mixed precision (FP16/BF16).
 - **Fast CPU mock engine** enabling complete end-to-end testing (<60 seconds) without GPU hardware.
 - **Academic deliverables**: Camera-ready ACL LaTeX paper (`report/paper.pdf`) and presentation slides (`presentation/presentation.pdf`).
@@ -50,7 +50,7 @@ This project implements and evaluates four progressive modeling regimes:
 1. **Unidirectional Baseline**: Standard Cross-Encoder (`DeBERTa-v3-base` for English, `BETO` for Spanish).
 2. **Bi-directional Symmetrical Augmentation (BSA)**: Transposed pair augmentation with bijective label inversion.
 3. **Consistency Regularization Loss (CRL)**: Siamese dual-stream network with involution matrix $P$ and Symmetric KL/JSD divergence loss.
-4. **Symmetrized Decoding (SD)**: Coordinate-equivariant post-hoc probability projection guaranteeing $\text{SoftCons} \equiv 1.0000$ (100\%).
+4. **Symmetrized Decoding (SD)**: Coordinate-equivariant post-hoc probability projection guaranteeing $\text{SoftCons} \equiv 1.0000$ (100%).
 5. **Hybrid CRL + SD**: Synergistic joint training and symmetrized decoding.
 
 ---
@@ -59,12 +59,12 @@ This project implements and evaluates four progressive modeling regimes:
 
 The table below reports consolidated official SemEval evaluation metrics evaluated on the PhrasIS development splits from GPU training:
 - **Weighted F1**: Macro/weighted multiclass classification performance across the 4 categories.
-- **SoftCons**: Directional logical consistency rate between reciprocal pair predictions $(\hat{y}_{\text{dir}}, \hat{y}_{\text{rev}})$.
+- **SoftCons**: Directional logical consistency rate between direct ($\hat{y}_{\text{dir}}$) and reverse ($\hat{y}_{\text{rev}}$) pair predictions.
 - **HardCons**: Strict accuracy rate requiring **both** forward and backward directions to be correctly classified.
 
 ### Consolidated Performance Table
 
-| Track | Model Backbone | Method | Weighted F1 | SoftCons | HardCons | $\Delta$ F1 | $\Delta$ SoftCons | $\Delta$ HardCons |
+| Track | Model Backbone | Method | Weighted F1 | SoftCons | HardCons | Δ F1 | Δ SoftCons | Δ HardCons |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Track 1 (English)** | `deberta-v3-base` | **Baseline** | 0.2286 | 1.0000 | 0.4000 | +0.0000 | +0.0000 | +0.0000 |
 | Track 1 (English) | `deberta-v3-base` | **BSA** | 0.2286 | 1.0000 | 0.4000 | +0.0000 | +0.0000 | +0.0000 |
@@ -86,18 +86,18 @@ The table below reports consolidated official SemEval evaluation metrics evaluat
 ## Methodological Highlights & Mathematical Proof
 
 ### 1. Bi-directional Symmetrical Augmentation (BSA)
-For each directed training pair $x = (t_1, t_2)$ with label $y$, BSA generates the synthetic transposed pair $x^{\text{rev}} = (t_2, t_1)$ with label $\operatorname{Rev}(y)$ via deterministic involution:
+For each directed training pair $x = (t_1, t_2)$ with label $y$, BSA generates the synthetic transposed pair $x^{\text{rev}} = (t_2, t_1)$ with label $\mathrm{Rev}(y)$ via deterministic involution:
 
 $$
 \begin{aligned}
-\operatorname{Rev}(\text{EQUIVALENCE}) &= \text{EQUIVALENCE} \\
-\operatorname{Rev}(\text{FORWARD\_ENTAILMENT}) &= \text{BACKWARD\_ENTAILMENT} \\
-\operatorname{Rev}(\text{BACKWARD\_ENTAILMENT}) &= \text{FORWARD\_ENTAILMENT} \\
-\operatorname{Rev}(\text{NEGATIVE\_OTHER}) &= \text{NEGATIVE\_OTHER}
+\mathrm{Rev}(\text{EQUIVALENCE}) &= \text{EQUIVALENCE} \\
+\mathrm{Rev}(\text{FORWARD\_ENTAILMENT}) &= \text{BACKWARD\_ENTAILMENT} \\
+\mathrm{Rev}(\text{BACKWARD\_ENTAILMENT}) &= \text{FORWARD\_ENTAILMENT} \\
+\mathrm{Rev}(\text{NEGATIVE\_OTHER}) &= \text{NEGATIVE\_OTHER}
 \end{aligned}
 $$
 
-### 2. Involutory Permutation Matrix $P$ & Consistency Regularization Loss (CRL)
+### 2. Involutory Permutation Matrix P & Consistency Regularization Loss (CRL)
 Under canonical index encoding:
 - `0`: `BACKWARD_ENTAILMENT`
 - `1`: `EQUIVALENCE`
@@ -112,7 +112,7 @@ $$
 
 **Algebraic Properties:**
 - Involution: $P = P^{-1} = P^T$ and $P^2 = I_4$.
-- Reflection: $\det(P) = -1$, $\operatorname{Tr}(P) = 2$.
+- Reflection: $\det(P) = -1$, $\mathrm{Tr}(P) = 2$.
 - Distribution transformation: If $p_{\text{rev}}$ is a categorical probability distribution over classes $(B, A)$, then $p_{\text{rev}} P$ is the equivalent distribution projected into the direct frame $(A, B)$.
 
 The Siamese network optimizes the joint CRL loss with linear warmup schedule $\lambda(t)$:
@@ -136,28 +136,43 @@ $$
 **Theorem:** For any arbitrary pair of probability vectors $(p_{\text{dir}}, p_{\text{rev}}) \in \Delta^3 \times \Delta^3$, discrete decoding under $p_{\text{sym,dir}}$ and $p_{\text{sym,rev}}$ strictly satisfies directional consistency:
 
 $$
-\operatorname{argmax}(p_{\text{sym,rev}}) = \operatorname{Rev}(\operatorname{argmax}(p_{\text{sym,dir}})) \implies \text{SoftCons} \equiv 1.0000
+\arg\max(p_{\text{sym,rev}}) = \mathrm{Rev}(\arg\max(p_{\text{sym,dir}})) \implies \text{SoftCons} \equiv 1.0000
 $$
 
 **Mathematical Proof:**
-1. Post-multiply the reverse symmetrized distribution $p_{\text{sym,rev}}$ by the involution matrix $P$:
-   $$
-   p_{\text{sym,rev}} P = \left[\frac{1}{2}(p_{\text{rev}} + p_{\text{dir}} P)\right] P = \frac{1}{2}(p_{\text{rev}} P + p_{\text{dir}} P^2)
-   $$
-2. Since $P^2 = I_4$ (identity matrix):
-   $$
-   p_{\text{sym,rev}} P = \frac{1}{2}(p_{\text{rev}} P + p_{\text{dir}}) = \frac{1}{2}(p_{\text{dir}} + p_{\text{rev}} P) = p_{\text{sym,dir}}
-   $$
-3. This establishes exact coordinate equivariance: for all classes $c \in \{0, 1, 2, 3\}$:
-   $$(p_{\text{sym,rev}})_{\operatorname{Rev}(c)} = (p_{\text{sym,dir}})_c$$
-4. Because the coordinates of $p_{\text{sym,rev}}$ are an exact permutation of $p_{\text{sym,dir}}$ governed by $\operatorname{Rev}$, the maximum value coordinate in the direct frame maps bijectively under $\operatorname{Rev}$ to the maximum coordinate in the reverse frame. With symmetric tie-breaking, $\operatorname{argmax}(p_{\text{sym,rev}}) \equiv \operatorname{Rev}(\operatorname{argmax}(p_{\text{sym,dir}}))$. $\blacksquare$
+
+**Step 1 (Involution transformation):** Post-multiply the reverse symmetrized distribution $p_{\text{sym,rev}}$ by the involution matrix $P$:
+
+$$
+p_{\text{sym,rev}} P = \left[\frac{1}{2}(p_{\text{rev}} + p_{\text{dir}} P)\right] P = \frac{1}{2}(p_{\text{rev}} P + p_{\text{dir}} P^2)
+$$
+
+**Step 2 (Algebraic reduction):** Since $P^2 = I_4$ (identity matrix):
+
+$$
+p_{\text{sym,rev}} P = \frac{1}{2}(p_{\text{rev}} P + p_{\text{dir}}) = \frac{1}{2}(p_{\text{dir}} + p_{\text{rev}} P) = p_{\text{sym,dir}}
+$$
+
+**Step 3 (Coordinate equivariance):** This establishes exact coordinate equivariance for all classes $c \in \{0, 1, 2, 3\}$:
+
+$$
+(p_{\text{sym,rev}})_{\mathrm{Rev}(c)} = (p_{\text{sym,dir}})_c
+$$
+
+**Step 4 (Argmax preservation):** Because the coordinates of $p_{\text{sym,rev}}$ are an exact permutation of $p_{\text{sym,dir}}$ governed by $\mathrm{Rev}$, the maximum value coordinate in the direct frame maps bijectively under $\mathrm{Rev}$ to the maximum coordinate in the reverse frame. With symmetric tie-breaking:
+
+$$
+\arg\max(p_{\text{sym,rev}}) \equiv \mathrm{Rev}(\arg\max(p_{\text{sym,dir}}))
+$$
+
+$\blacksquare$
 
 ---
 
 ## Repository Architecture & Code Layout
 
 ```
-FinalProject/
+DiCo-NLI/
 ├── data/
 │   ├── raw/                  # PhrasIS corpus CSVs (Track 1 EN, Track 2 ES)
 │   └── processed/            # Cleaned splits and paired instances
@@ -243,7 +258,7 @@ pip install -r requirements.txt
 Run the full benchmark, evaluation, and test suite locally in under 60 seconds without a GPU:
 
 ### 1. Fast Full-Matrix Benchmark (<2s)
-Executes all 10 benchmark experiments (5 methods $\times$ 2 tracks), exports predictions, and verifies Codabench format:
+Executes all 10 benchmark experiments (5 methods × 2 tracks), exports predictions, and verifies Codabench format:
 ```bash
 bash scripts/run_gpu_training.sh --quick-test
 ```
