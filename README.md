@@ -91,9 +91,9 @@ For each directed training pair $x = (t_1, t_2)$ with label $y$, BSA generates t
 $$
 \begin{aligned}
 \mathrm{Rev}(\text{EQUIVALENCE}) &= \text{EQUIVALENCE} \\
-\mathrm{Rev}(\text{FORWARD\_ENTAILMENT}) &= \text{BACKWARD\_ENTAILMENT} \\
-\mathrm{Rev}(\text{BACKWARD\_ENTAILMENT}) &= \text{FORWARD\_ENTAILMENT} \\
-\mathrm{Rev}(\text{NEGATIVE\_OTHER}) &= \text{NEGATIVE\_OTHER}
+\mathrm{Rev}(\text{FORWARD ENTAILMENT}) &= \text{BACKWARD ENTAILMENT} \\
+\mathrm{Rev}(\text{BACKWARD ENTAILMENT}) &= \text{FORWARD ENTAILMENT} \\
+\mathrm{Rev}(\text{NEGATIVE OTHER}) &= \text{NEGATIVE OTHER}
 \end{aligned}
 $$
 
